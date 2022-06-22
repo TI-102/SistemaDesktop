@@ -45,17 +45,17 @@ namespace QrCode
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.lblValor = new System.Windows.Forms.Label();
             this.txtValor = new System.Windows.Forms.TextBox();
-            this.pctImage = new System.Windows.Forms.PictureBox();
+            this.pctImageProd = new System.Windows.Forms.PictureBox();
             this.btnAdicionar = new System.Windows.Forms.Button();
             this.painelDeBotoes.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pctImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctImageProd)).BeginInit();
             this.SuspendLayout();
             // 
             // lblGerenciar
             // 
             this.lblGerenciar.AutoSize = true;
             this.lblGerenciar.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblGerenciar.Location = new System.Drawing.Point(241, 9);
+            this.lblGerenciar.Location = new System.Drawing.Point(4, 9);
             this.lblGerenciar.Name = "lblGerenciar";
             this.lblGerenciar.Size = new System.Drawing.Size(284, 40);
             this.lblGerenciar.TabIndex = 0;
@@ -207,17 +207,18 @@ namespace QrCode
             this.txtValor.Size = new System.Drawing.Size(125, 23);
             this.txtValor.TabIndex = 11;
             // 
-            // pctImage
+            // pctImageProd
             // 
-            this.pctImage.Location = new System.Drawing.Point(533, 78);
-            this.pctImage.Name = "pctImage";
-            this.pctImage.Size = new System.Drawing.Size(240, 192);
-            this.pctImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pctImage.TabIndex = 14;
-            this.pctImage.TabStop = false;
+            this.pctImageProd.Location = new System.Drawing.Point(533, 78);
+            this.pctImageProd.Name = "pctImageProd";
+            this.pctImageProd.Size = new System.Drawing.Size(240, 192);
+            this.pctImageProd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pctImageProd.TabIndex = 14;
+            this.pctImageProd.TabStop = false;
             // 
             // btnAdicionar
             // 
+            this.btnAdicionar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAdicionar.Location = new System.Drawing.Point(566, 276);
             this.btnAdicionar.Name = "btnAdicionar";
             this.btnAdicionar.Size = new System.Drawing.Size(180, 40);
@@ -232,7 +233,7 @@ namespace QrCode
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.ControlBox = false;
             this.Controls.Add(this.btnAdicionar);
-            this.Controls.Add(this.pctImage);
+            this.Controls.Add(this.pctImageProd);
             this.Controls.Add(this.txtValor);
             this.Controls.Add(this.lblValor);
             this.Controls.Add(this.txtDescricao);
@@ -248,7 +249,7 @@ namespace QrCode
             this.Name = "frmGerenciar";
             this.Text = "frmGerenciar";
             this.painelDeBotoes.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pctImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctImageProd)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -271,7 +272,7 @@ namespace QrCode
         private System.Windows.Forms.TextBox txtDescricao;
         private System.Windows.Forms.Label lblValor;
         private System.Windows.Forms.TextBox txtValor;
-        private System.Windows.Forms.PictureBox pctImage;
+        private System.Windows.Forms.PictureBox pctImageProd;
         private System.Windows.Forms.Button btnAdicionar;
     }
 }
