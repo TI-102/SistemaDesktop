@@ -13,7 +13,7 @@ namespace QrCode
         public frmGerenciarMesas()
         {
             InitializeComponent();
-            
+            txtCodigo.Enabled = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
