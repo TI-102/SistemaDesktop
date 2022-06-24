@@ -21,5 +21,11 @@ namespace QrCode
         {
 
         }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            frmCadastro abrir = new frmCadastro();
+            abrir.ShowDialog();
+        }
     }
 }

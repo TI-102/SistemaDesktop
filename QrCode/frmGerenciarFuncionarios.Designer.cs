@@ -190,7 +190,7 @@ namespace QrCode
             // 
             // pctImagemFunc
             // 
-            this.pctImagemFunc.Location = new System.Drawing.Point(503, 99);
+            this.pctImagemFunc.Location = new System.Drawing.Point(510, 98);
             this.pctImagemFunc.Name = "pctImagemFunc";
             this.pctImagemFunc.Size = new System.Drawing.Size(242, 181);
             this.pctImagemFunc.TabIndex = 17;
