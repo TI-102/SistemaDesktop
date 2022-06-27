@@ -10,6 +10,7 @@ namespace QrCode
 {
     public partial class frmCarregando : Form
     {
+        public Boolean loaded = false;  
         public frmCarregando()
         {
             InitializeComponent();
@@ -25,10 +26,13 @@ namespace QrCode
 
             if (prbCarregando.Value == 100)
             {
-                Form1 abrir = new Form1();
-                abrir.Show();
-                this.Hide();
                 tmrCarregar.Enabled = false;
+                loaded = true;
+                this.Hide();
+                frmMenu abrir = new frmMenu();
+                abrir.Show();
+
+                
             }
         }
 

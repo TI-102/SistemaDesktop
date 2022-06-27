@@ -8,11 +8,18 @@ using System.Windows.Forms;
 
 namespace QrCode
 {
-    public partial class frmGerenciar : Form
+    public partial class frmVendas : Form
     {
-        public frmGerenciar()
+        public frmVendas()
         {
             InitializeComponent();
+        }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            frmMenu abrir = new frmMenu();
+            abrir.Show();
+            this.Hide();
         }
     }
 }

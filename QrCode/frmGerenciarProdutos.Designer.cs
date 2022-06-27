@@ -1,7 +1,7 @@
 ﻿
 namespace QrCode
 {
-    partial class frmGerenciar
+    partial class frmGerenciarProdutos
     {
         /// <summary>
         /// Required designer variable.
@@ -29,15 +29,15 @@ namespace QrCode
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGerenciar));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGerenciarProdutos));
             this.lblGerenciar = new System.Windows.Forms.Label();
             this.lblCodigo = new System.Windows.Forms.Label();
             this.painelDeBotoes = new System.Windows.Forms.Panel();
-            this.btnVoltar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.btnCadastrar = new System.Windows.Forms.Button();
+            this.btnVoltar = new System.Windows.Forms.Button();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.lblNome = new System.Windows.Forms.Label();
             this.lblDescricao = new System.Windows.Forms.Label();
@@ -47,19 +47,21 @@ namespace QrCode
             this.txtValor = new System.Windows.Forms.TextBox();
             this.pctImageProd = new System.Windows.Forms.PictureBox();
             this.btnAdicionar = new System.Windows.Forms.Button();
+            this.pctTitulo = new System.Windows.Forms.PictureBox();
             this.painelDeBotoes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctImageProd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctTitulo)).BeginInit();
             this.SuspendLayout();
             // 
             // lblGerenciar
             // 
             this.lblGerenciar.AutoSize = true;
             this.lblGerenciar.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblGerenciar.Location = new System.Drawing.Point(4, 9);
+            this.lblGerenciar.Location = new System.Drawing.Point(4, 12);
             this.lblGerenciar.Name = "lblGerenciar";
-            this.lblGerenciar.Size = new System.Drawing.Size(284, 40);
+            this.lblGerenciar.Size = new System.Drawing.Size(282, 40);
             this.lblGerenciar.TabIndex = 0;
-            this.lblGerenciar.Text = "Gerenciar Produtos";
+            this.lblGerenciar.Text = "Gerenciar Cardápio";
             // 
             // lblCodigo
             // 
@@ -73,7 +75,6 @@ namespace QrCode
             // 
             // painelDeBotoes
             // 
-            this.painelDeBotoes.Controls.Add(this.btnVoltar);
             this.painelDeBotoes.Controls.Add(this.btnExcluir);
             this.painelDeBotoes.Controls.Add(this.btnAlterar);
             this.painelDeBotoes.Controls.Add(this.btnPesquisar);
@@ -83,25 +84,12 @@ namespace QrCode
             this.painelDeBotoes.Size = new System.Drawing.Size(796, 122);
             this.painelDeBotoes.TabIndex = 2;
             // 
-            // btnVoltar
-            // 
-            this.btnVoltar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnVoltar.Image = ((System.Drawing.Image)(resources.GetObject("btnVoltar.Image")));
-            this.btnVoltar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVoltar.Location = new System.Drawing.Point(705, 66);
-            this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(88, 36);
-            this.btnVoltar.TabIndex = 7;
-            this.btnVoltar.Text = "Voltar";
-            this.btnVoltar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnVoltar.UseVisualStyleBackColor = true;
-            // 
             // btnExcluir
             // 
             this.btnExcluir.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnExcluir.Image = ((System.Drawing.Image)(resources.GetObject("btnExcluir.Image")));
             this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcluir.Location = new System.Drawing.Point(529, 23);
+            this.btnExcluir.Location = new System.Drawing.Point(409, 21);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnExcluir.Size = new System.Drawing.Size(165, 79);
@@ -115,7 +103,7 @@ namespace QrCode
             this.btnAlterar.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAlterar.Image = ((System.Drawing.Image)(resources.GetObject("btnAlterar.Image")));
             this.btnAlterar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAlterar.Location = new System.Drawing.Point(358, 23);
+            this.btnAlterar.Location = new System.Drawing.Point(215, 22);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(165, 79);
             this.btnAlterar.TabIndex = 5;
@@ -128,26 +116,42 @@ namespace QrCode
             this.btnPesquisar.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnPesquisar.Image = ((System.Drawing.Image)(resources.GetObject("btnPesquisar.Image")));
             this.btnPesquisar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPesquisar.Location = new System.Drawing.Point(187, 22);
+            this.btnPesquisar.Location = new System.Drawing.Point(603, 21);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(165, 79);
             this.btnPesquisar.TabIndex = 4;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
             // btnCadastrar
             // 
             this.btnCadastrar.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnCadastrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCadastrar.Image")));
             this.btnCadastrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCadastrar.Location = new System.Drawing.Point(16, 23);
+            this.btnCadastrar.Location = new System.Drawing.Point(21, 22);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(165, 79);
             this.btnCadastrar.TabIndex = 3;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
+            // 
+            // btnVoltar
+            // 
+            this.btnVoltar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnVoltar.Image = ((System.Drawing.Image)(resources.GetObject("btnVoltar.Image")));
+            this.btnVoltar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVoltar.Location = new System.Drawing.Point(700, 12);
+            this.btnVoltar.Name = "btnVoltar";
+            this.btnVoltar.Size = new System.Drawing.Size(88, 36);
+            this.btnVoltar.TabIndex = 7;
+            this.btnVoltar.Text = "Voltar";
+            this.btnVoltar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnVoltar.UseVisualStyleBackColor = true;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // txtCodigo
             // 
@@ -226,12 +230,23 @@ namespace QrCode
             this.btnAdicionar.Text = "Adicionar Imagem";
             this.btnAdicionar.UseVisualStyleBackColor = true;
             // 
-            // frmGerenciar
+            // pctTitulo
+            // 
+            this.pctTitulo.Image = ((System.Drawing.Image)(resources.GetObject("pctTitulo.Image")));
+            this.pctTitulo.Location = new System.Drawing.Point(292, 2);
+            this.pctTitulo.Name = "pctTitulo";
+            this.pctTitulo.Size = new System.Drawing.Size(75, 59);
+            this.pctTitulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctTitulo.TabIndex = 16;
+            this.pctTitulo.TabStop = false;
+            // 
+            // frmGerenciarProdutos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.ControlBox = false;
+            this.Controls.Add(this.pctTitulo);
+            this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnAdicionar);
             this.Controls.Add(this.pctImageProd);
             this.Controls.Add(this.txtValor);
@@ -246,10 +261,15 @@ namespace QrCode
             this.Controls.Add(this.lblGerenciar);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Name = "frmGerenciar";
-            this.Text = "frmGerenciar";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "frmGerenciarProdutos";
+            this.Text = "Gerenciar Cardápio";
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.frmGerenciarProdutos_MouseMove);
             this.painelDeBotoes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pctImageProd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctTitulo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -274,5 +294,6 @@ namespace QrCode
         private System.Windows.Forms.TextBox txtValor;
         private System.Windows.Forms.PictureBox pctImageProd;
         private System.Windows.Forms.Button btnAdicionar;
+        private System.Windows.Forms.PictureBox pctTitulo;
     }
 }

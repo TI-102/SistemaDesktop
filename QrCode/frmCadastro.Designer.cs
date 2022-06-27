@@ -148,6 +148,7 @@ namespace QrCode
             this.btnSair.TabIndex = 17;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = false;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // btnCadastrar
             // 
@@ -160,6 +161,7 @@ namespace QrCode
             this.btnCadastrar.TabIndex = 16;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = false;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // pctImagemCad
             // 
@@ -210,6 +212,9 @@ namespace QrCode
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.lblSenha);
             this.Controls.Add(this.lblUsuario);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmCadastro";
             this.Text = "frmCadastro";
             ((System.ComponentModel.ISupportInitialize)(this.pctImagemCad)).EndInit();

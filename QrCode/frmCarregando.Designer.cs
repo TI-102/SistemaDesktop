@@ -69,6 +69,7 @@ namespace QrCode
             // 
             // tmrCarregar
             // 
+            this.tmrCarregar.Enabled = true;
             this.tmrCarregar.Tick += new System.EventHandler(this.tmrCarregar_Tick);
             // 
             // pictureBox1
@@ -90,6 +91,9 @@ namespace QrCode
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblCarregando);
             this.Controls.Add(this.prbCarregando);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmCarregando";
             this.Text = "frmCarregando";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmCarregando_FormClosing);

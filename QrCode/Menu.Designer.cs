@@ -35,6 +35,7 @@ namespace QrCode
             this.btnMesa = new System.Windows.Forms.Button();
             this.btnVendas = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnVoltar = new System.Windows.Forms.Button();
             btnFunc = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -50,6 +51,7 @@ namespace QrCode
             btnFunc.Text = "Funcionários";
             btnFunc.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             btnFunc.UseVisualStyleBackColor = true;
+            btnFunc.Click += new System.EventHandler(this.btnFunc_Click);
             // 
             // btnCard
             // 
@@ -63,6 +65,7 @@ namespace QrCode
             this.btnCard.Text = "Cardápio";
             this.btnCard.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCard.UseVisualStyleBackColor = true;
+            this.btnCard.Click += new System.EventHandler(this.btnCard_Click);
             // 
             // btnMesa
             // 
@@ -72,9 +75,10 @@ namespace QrCode
             this.btnMesa.Name = "btnMesa";
             this.btnMesa.Size = new System.Drawing.Size(195, 177);
             this.btnMesa.TabIndex = 1;
-            this.btnMesa.Text = "Mesa";
+            this.btnMesa.Text = "Mesas";
             this.btnMesa.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnMesa.UseVisualStyleBackColor = true;
+            this.btnMesa.Click += new System.EventHandler(this.btnMesa_Click);
             // 
             // btnVendas
             // 
@@ -88,6 +92,7 @@ namespace QrCode
             this.btnVendas.Text = "Vendas";
             this.btnVendas.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnVendas.UseVisualStyleBackColor = true;
+            this.btnVendas.Click += new System.EventHandler(this.btnVendas_Click);
             // 
             // label1
             // 
@@ -99,20 +104,37 @@ namespace QrCode
             this.label1.TabIndex = 4;
             this.label1.Text = "Menu Principal";
             // 
+            // btnVoltar
+            // 
+            this.btnVoltar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnVoltar.Image = ((System.Drawing.Image)(resources.GetObject("btnVoltar.Image")));
+            this.btnVoltar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVoltar.Location = new System.Drawing.Point(700, 12);
+            this.btnVoltar.Name = "btnVoltar";
+            this.btnVoltar.Size = new System.Drawing.Size(88, 36);
+            this.btnVoltar.TabIndex = 9;
+            this.btnVoltar.Text = "Sair";
+            this.btnVoltar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnVoltar.UseVisualStyleBackColor = true;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnVendas);
             this.Controls.Add(btnFunc);
             this.Controls.Add(this.btnMesa);
             this.Controls.Add(this.btnCard);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmMenu";
             this.Text = "Menu";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMenu_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -125,5 +147,6 @@ namespace QrCode
         private System.Windows.Forms.Button btnFunc;
         private System.Windows.Forms.Button btnVendas;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnVoltar;
     }
 }

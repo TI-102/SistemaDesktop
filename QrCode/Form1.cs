@@ -25,7 +25,21 @@ namespace QrCode
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             frmCadastro abrir = new frmCadastro();
-            abrir.ShowDialog();
+            abrir.Show();
+            this.Hide();
+        }
+
+        private void btnEntrar_Click(object sender, EventArgs e)
+        {
+            frmCarregando abrir = new frmCarregando();
+            abrir.Show();
+            this.Hide();
+            
+        }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

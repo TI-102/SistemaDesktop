@@ -14,5 +14,19 @@ namespace QrCode
         {
             InitializeComponent();
         }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            Form1 abrir = new Form1();
+            abrir.Show();
+            this.Hide();
+        }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            Form1 abrir = new Form1();
+            abrir.Show();
+            this.Hide();
+        }
     }
 }

@@ -14,5 +14,47 @@ namespace QrCode
         {
             InitializeComponent();
         }
+
+        private void btnCard_Click(object sender, EventArgs e)
+        {
+            frmGerenciarProdutos abrir = new frmGerenciarProdutos();
+            abrir.Show();
+            this.Hide();
+        }
+
+        private void frmMenu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = true;
+        }
+
+        private void btnFunc_Click(object sender, EventArgs e)
+        {
+            frmGerenciarFuncionarios abrir = new frmGerenciarFuncionarios();
+            abrir.Show();
+            this.Hide();
+        }
+
+        private void btnMesa_Click(object sender, EventArgs e)
+        {
+            frmMesas abrir = new frmMesas();
+            abrir.Show();
+            this.Hide();
+        }
+
+        private void btnVendas_Click(object sender, EventArgs e)
+        {
+            frmVendas abrir = new frmVendas();
+
+                abrir.Show();
+                this.Hide();
+
+        }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            Form1 abrir = new Form1();
+            abrir.Show();
+            this.Hide();
+        }
     }
 }

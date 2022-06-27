@@ -91,6 +91,7 @@ namespace QrCode
             this.btnEntrar.TabIndex = 5;
             this.btnEntrar.Text = "Entrar";
             this.btnEntrar.UseVisualStyleBackColor = false;
+            this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
             // 
             // btnSair
             // 
@@ -103,6 +104,7 @@ namespace QrCode
             this.btnSair.TabIndex = 6;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = false;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // label1
             // 
