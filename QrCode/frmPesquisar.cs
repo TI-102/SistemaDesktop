@@ -13,9 +13,9 @@ namespace QrCode
         public frmPesquisar()
         {
             InitializeComponent();
-            rbtCodigo.TabStop = true;
-            rbtNome.TabStop = true;
-            rbtNumero.TabStop = true;
+            rbtCodigo.TabStop = false;
+            rbtNome.TabStop = false;
+            rbtNumero.TabStop = false;
 
         }
 

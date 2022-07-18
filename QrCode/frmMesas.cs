@@ -13,6 +13,10 @@ namespace QrCode
         public frmMesas()
         {
             InitializeComponent();
+            txtCodigo.Enabled = false;
+            btnCadastrar.Enabled = false;
+            btnAlterar.Enabled = false;
+            btnExcluir.Enabled = false;
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)

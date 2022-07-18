@@ -87,6 +87,7 @@ namespace QrCode
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ControlBox = false;
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblCarregando);
@@ -95,6 +96,7 @@ namespace QrCode
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmCarregando";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmCarregando";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmCarregando_FormClosing);
             this.Load += new System.EventHandler(this.frmCarregando_Load);

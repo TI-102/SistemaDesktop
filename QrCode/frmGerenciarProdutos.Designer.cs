@@ -60,7 +60,7 @@ namespace QrCode
             this.lblGerenciar.Location = new System.Drawing.Point(4, 12);
             this.lblGerenciar.Name = "lblGerenciar";
             this.lblGerenciar.Size = new System.Drawing.Size(282, 40);
-            this.lblGerenciar.TabIndex = 0;
+            this.lblGerenciar.TabIndex = 152;
             this.lblGerenciar.Text = "Gerenciar Cardápio";
             // 
             // lblCodigo
@@ -70,7 +70,7 @@ namespace QrCode
             this.lblCodigo.Location = new System.Drawing.Point(26, 100);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(60, 21);
-            this.lblCodigo.TabIndex = 1;
+            this.lblCodigo.TabIndex = 133;
             this.lblCodigo.Text = "Codigo";
             // 
             // painelDeBotoes
@@ -82,7 +82,7 @@ namespace QrCode
             this.painelDeBotoes.Location = new System.Drawing.Point(4, 326);
             this.painelDeBotoes.Name = "painelDeBotoes";
             this.painelDeBotoes.Size = new System.Drawing.Size(796, 122);
-            this.painelDeBotoes.TabIndex = 2;
+            this.painelDeBotoes.TabIndex = 5;
             // 
             // btnExcluir
             // 
@@ -93,7 +93,7 @@ namespace QrCode
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnExcluir.Size = new System.Drawing.Size(165, 79);
-            this.btnExcluir.TabIndex = 6;
+            this.btnExcluir.TabIndex = 2;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnExcluir.UseVisualStyleBackColor = true;
@@ -106,7 +106,7 @@ namespace QrCode
             this.btnAlterar.Location = new System.Drawing.Point(215, 22);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(165, 79);
-            this.btnAlterar.TabIndex = 5;
+            this.btnAlterar.TabIndex = 1;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAlterar.UseVisualStyleBackColor = true;
@@ -119,7 +119,7 @@ namespace QrCode
             this.btnPesquisar.Location = new System.Drawing.Point(603, 21);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(165, 79);
-            this.btnPesquisar.TabIndex = 4;
+            this.btnPesquisar.TabIndex = 3;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnPesquisar.UseVisualStyleBackColor = true;
@@ -133,7 +133,7 @@ namespace QrCode
             this.btnCadastrar.Location = new System.Drawing.Point(21, 22);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(165, 79);
-            this.btnCadastrar.TabIndex = 3;
+            this.btnCadastrar.TabIndex = 0;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCadastrar.UseVisualStyleBackColor = true;
@@ -147,7 +147,7 @@ namespace QrCode
             this.btnVoltar.Location = new System.Drawing.Point(700, 12);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(88, 36);
-            this.btnVoltar.TabIndex = 7;
+            this.btnVoltar.TabIndex = 6;
             this.btnVoltar.Text = "Voltar";
             this.btnVoltar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnVoltar.UseVisualStyleBackColor = true;
@@ -158,7 +158,7 @@ namespace QrCode
             this.txtCodigo.Location = new System.Drawing.Point(111, 102);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(165, 23);
-            this.txtCodigo.TabIndex = 3;
+            this.txtCodigo.TabIndex = 0;
             // 
             // lblNome
             // 
@@ -167,7 +167,7 @@ namespace QrCode
             this.lblNome.Location = new System.Drawing.Point(27, 153);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(53, 21);
-            this.lblNome.TabIndex = 4;
+            this.lblNome.TabIndex = 441;
             this.lblNome.Text = "Nome";
             // 
             // lblDescricao
@@ -177,22 +177,24 @@ namespace QrCode
             this.lblDescricao.Location = new System.Drawing.Point(26, 207);
             this.lblDescricao.Name = "lblDescricao";
             this.lblDescricao.Size = new System.Drawing.Size(77, 21);
-            this.lblDescricao.TabIndex = 5;
+            this.lblDescricao.TabIndex = 555;
             this.lblDescricao.Text = "Descrição";
             // 
             // txtNome
             // 
             this.txtNome.Location = new System.Drawing.Point(111, 155);
+            this.txtNome.MaxLength = 40;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(326, 23);
-            this.txtNome.TabIndex = 6;
+            this.txtNome.TabIndex = 1;
             // 
             // txtDescricao
             // 
             this.txtDescricao.Location = new System.Drawing.Point(111, 209);
+            this.txtDescricao.MaxLength = 100;
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Size = new System.Drawing.Size(385, 23);
-            this.txtDescricao.TabIndex = 7;
+            this.txtDescricao.TabIndex = 2;
             // 
             // lblValor
             // 
@@ -201,15 +203,16 @@ namespace QrCode
             this.lblValor.Location = new System.Drawing.Point(27, 263);
             this.lblValor.Name = "lblValor";
             this.lblValor.Size = new System.Drawing.Size(46, 21);
-            this.lblValor.TabIndex = 10;
+            this.lblValor.TabIndex = 131;
             this.lblValor.Text = "Valor";
             // 
             // txtValor
             // 
             this.txtValor.Location = new System.Drawing.Point(111, 261);
+            this.txtValor.MaxLength = 12;
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(125, 23);
-            this.txtValor.TabIndex = 11;
+            this.txtValor.TabIndex = 3;
             // 
             // pctImageProd
             // 
@@ -226,7 +229,7 @@ namespace QrCode
             this.btnAdicionar.Location = new System.Drawing.Point(566, 276);
             this.btnAdicionar.Name = "btnAdicionar";
             this.btnAdicionar.Size = new System.Drawing.Size(180, 40);
-            this.btnAdicionar.TabIndex = 15;
+            this.btnAdicionar.TabIndex = 4;
             this.btnAdicionar.Text = "Adicionar Imagem";
             this.btnAdicionar.UseVisualStyleBackColor = true;
             // 
@@ -245,6 +248,7 @@ namespace QrCode
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ControlBox = false;
             this.Controls.Add(this.pctTitulo);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnAdicionar);
@@ -265,6 +269,7 @@ namespace QrCode
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmGerenciarProdutos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gerenciar Cardápio";
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.frmGerenciarProdutos_MouseMove);
             this.painelDeBotoes.ResumeLayout(false);

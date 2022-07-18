@@ -63,7 +63,6 @@ namespace QrCode
             this.rbtNome.Name = "rbtNome";
             this.rbtNome.Size = new System.Drawing.Size(58, 19);
             this.rbtNome.TabIndex = 2;
-            this.rbtNome.TabStop = true;
             this.rbtNome.Text = "Nome";
             this.rbtNome.UseVisualStyleBackColor = true;
             this.rbtNome.CheckedChanged += new System.EventHandler(this.Radiobuttons_CheckedChanged);
@@ -75,7 +74,6 @@ namespace QrCode
             this.rbtNumero.Name = "rbtNumero";
             this.rbtNumero.Size = new System.Drawing.Size(69, 19);
             this.rbtNumero.TabIndex = 1;
-            this.rbtNumero.TabStop = true;
             this.rbtNumero.Text = "Número";
             this.rbtNumero.UseVisualStyleBackColor = true;
             this.rbtNumero.CheckedChanged += new System.EventHandler(this.Radiobuttons_CheckedChanged);
@@ -87,7 +85,6 @@ namespace QrCode
             this.rbtCodigo.Name = "rbtCodigo";
             this.rbtCodigo.Size = new System.Drawing.Size(64, 19);
             this.rbtCodigo.TabIndex = 0;
-            this.rbtCodigo.TabStop = true;
             this.rbtCodigo.Text = "Código";
             this.rbtCodigo.UseVisualStyleBackColor = true;
             this.rbtCodigo.CheckedChanged += new System.EventHandler(this.Radiobuttons_CheckedChanged);
@@ -121,7 +118,7 @@ namespace QrCode
             this.btnVoltar.Location = new System.Drawing.Point(745, 12);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(88, 36);
-            this.btnVoltar.TabIndex = 10;
+            this.btnVoltar.TabIndex = 5;
             this.btnVoltar.Text = "Voltar";
             this.btnVoltar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnVoltar.UseVisualStyleBackColor = true;
@@ -135,7 +132,7 @@ namespace QrCode
             this.btnPesquisar.Location = new System.Drawing.Point(668, 86);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(165, 81);
-            this.btnPesquisar.TabIndex = 11;
+            this.btnPesquisar.TabIndex = 3;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnPesquisar.UseVisualStyleBackColor = true;
@@ -144,9 +141,10 @@ namespace QrCode
             // txtPesquisa
             // 
             this.txtPesquisa.Location = new System.Drawing.Point(12, 173);
+            this.txtPesquisa.MaxLength = 40;
             this.txtPesquisa.Name = "txtPesquisa";
             this.txtPesquisa.Size = new System.Drawing.Size(821, 23);
-            this.txtPesquisa.TabIndex = 12;
+            this.txtPesquisa.TabIndex = 2;
             // 
             // dgvPesquisa
             // 
@@ -155,13 +153,14 @@ namespace QrCode
             this.dgvPesquisa.Name = "dgvPesquisa";
             this.dgvPesquisa.RowTemplate.Height = 25;
             this.dgvPesquisa.Size = new System.Drawing.Size(821, 319);
-            this.dgvPesquisa.TabIndex = 13;
+            this.dgvPesquisa.TabIndex = 4;
             // 
             // frmPesquisar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(845, 542);
+            this.ControlBox = false;
             this.Controls.Add(this.dgvPesquisa);
             this.Controls.Add(this.txtPesquisa);
             this.Controls.Add(this.btnVoltar);
@@ -172,7 +171,8 @@ namespace QrCode
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmPesquisar";
-            this.Text = "frmPesquisar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Pesquisar";
             this.gbxPesquisa.ResumeLayout(false);
             this.gbxPesquisa.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPesquisa)).EndInit();

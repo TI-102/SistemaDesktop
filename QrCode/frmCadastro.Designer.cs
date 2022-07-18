@@ -41,10 +41,7 @@ namespace QrCode
             this.txtConfirmar = new System.Windows.Forms.TextBox();
             this.btnSair = new System.Windows.Forms.Button();
             this.btnCadastrar = new System.Windows.Forms.Button();
-            this.pctImagemCad = new System.Windows.Forms.PictureBox();
-            this.btnAdicionar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pctImagemCad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,10 +49,11 @@ namespace QrCode
             // 
             this.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtUsuario.Location = new System.Drawing.Point(273, 168);
+            this.txtUsuario.MaxLength = 40;
             this.txtUsuario.Multiline = true;
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(269, 25);
-            this.txtUsuario.TabIndex = 6;
+            this.txtUsuario.TabIndex = 0;
             // 
             // lblSenha
             // 
@@ -108,34 +106,41 @@ namespace QrCode
             this.lblCadastro.Location = new System.Drawing.Point(3, 9);
             this.lblCadastro.Name = "lblCadastro";
             this.lblCadastro.Size = new System.Drawing.Size(139, 40);
-            this.lblCadastro.TabIndex = 12;
+            this.lblCadastro.TabIndex = 52;
             this.lblCadastro.Text = "Cadastro";
             // 
             // cbbCargo
             // 
             this.cbbCargo.FormattingEnabled = true;
+            this.cbbCargo.Items.AddRange(new object[] {
+            "Cozinheiro",
+            "Gerente",
+            "Garçom",
+            ""});
             this.cbbCargo.Location = new System.Drawing.Point(273, 324);
             this.cbbCargo.Name = "cbbCargo";
             this.cbbCargo.Size = new System.Drawing.Size(270, 23);
-            this.cbbCargo.TabIndex = 13;
+            this.cbbCargo.TabIndex = 3;
             // 
             // txtSenha
             // 
             this.txtSenha.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSenha.Location = new System.Drawing.Point(273, 221);
+            this.txtSenha.MaxLength = 12;
             this.txtSenha.Multiline = true;
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(269, 25);
-            this.txtSenha.TabIndex = 14;
+            this.txtSenha.TabIndex = 1;
             // 
             // txtConfirmar
             // 
             this.txtConfirmar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtConfirmar.Location = new System.Drawing.Point(273, 272);
+            this.txtConfirmar.MaxLength = 12;
             this.txtConfirmar.Multiline = true;
             this.txtConfirmar.Name = "txtConfirmar";
             this.txtConfirmar.Size = new System.Drawing.Size(269, 25);
-            this.txtConfirmar.TabIndex = 15;
+            this.txtConfirmar.TabIndex = 2;
             // 
             // btnSair
             // 
@@ -145,7 +150,7 @@ namespace QrCode
             this.btnSair.Location = new System.Drawing.Point(416, 377);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(127, 61);
-            this.btnSair.TabIndex = 17;
+            this.btnSair.TabIndex = 5;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = false;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
@@ -158,35 +163,15 @@ namespace QrCode
             this.btnCadastrar.Location = new System.Drawing.Point(257, 377);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(127, 61);
-            this.btnCadastrar.TabIndex = 16;
+            this.btnCadastrar.TabIndex = 4;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = false;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
-            // pctImagemCad
-            // 
-            this.pctImagemCad.Location = new System.Drawing.Point(308, 9);
-            this.pctImagemCad.Name = "pctImagemCad";
-            this.pctImagemCad.Size = new System.Drawing.Size(196, 126);
-            this.pctImagemCad.TabIndex = 18;
-            this.pctImagemCad.TabStop = false;
-            // 
-            // btnAdicionar
-            // 
-            this.btnAdicionar.BackColor = System.Drawing.Color.Firebrick;
-            this.btnAdicionar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnAdicionar.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnAdicionar.Location = new System.Drawing.Point(334, 137);
-            this.btnAdicionar.Name = "btnAdicionar";
-            this.btnAdicionar.Size = new System.Drawing.Size(144, 25);
-            this.btnAdicionar.TabIndex = 19;
-            this.btnAdicionar.Text = "Adicionar Imagem";
-            this.btnAdicionar.UseVisualStyleBackColor = false;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(638, -1);
+            this.pictureBox1.Location = new System.Drawing.Point(320, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(182, 126);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -198,9 +183,8 @@ namespace QrCode
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ControlBox = false;
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.btnAdicionar);
-            this.Controls.Add(this.pctImagemCad);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.txtConfirmar);
@@ -216,8 +200,8 @@ namespace QrCode
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmCadastro";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmCadastro";
-            ((System.ComponentModel.ISupportInitialize)(this.pctImagemCad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -236,8 +220,6 @@ namespace QrCode
         private System.Windows.Forms.TextBox txtConfirmar;
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.Button btnCadastrar;
-        private System.Windows.Forms.PictureBox pctImagemCad;
-        private System.Windows.Forms.Button btnAdicionar;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

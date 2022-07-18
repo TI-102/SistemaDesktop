@@ -34,19 +34,17 @@ namespace QrCode
             this.lblCódigo = new System.Windows.Forms.Label();
             this.lblNome = new System.Windows.Forms.Label();
             this.lblSenha = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.txtNome = new System.Windows.Forms.TextBox();
+            this.txtSenha = new System.Windows.Forms.TextBox();
             this.painelDeBotoes = new System.Windows.Forms.Panel();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
-            this.pctImagemFunc = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.painelDeBotoes.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pctImagemFunc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,7 +55,7 @@ namespace QrCode
             this.lblGerenciarFuncionario.Location = new System.Drawing.Point(1, 9);
             this.lblGerenciarFuncionario.Name = "lblGerenciarFuncionario";
             this.lblGerenciarFuncionario.Size = new System.Drawing.Size(334, 40);
-            this.lblGerenciarFuncionario.TabIndex = 0;
+            this.lblGerenciarFuncionario.TabIndex = 90;
             this.lblGerenciarFuncionario.Text = "Gerenciar Funcionários";
             // 
             // lblCódigo
@@ -67,7 +65,7 @@ namespace QrCode
             this.lblCódigo.Location = new System.Drawing.Point(80, 124);
             this.lblCódigo.Name = "lblCódigo";
             this.lblCódigo.Size = new System.Drawing.Size(60, 21);
-            this.lblCódigo.TabIndex = 1;
+            this.lblCódigo.TabIndex = 69;
             this.lblCódigo.Text = "Código";
             // 
             // lblNome
@@ -77,7 +75,7 @@ namespace QrCode
             this.lblNome.Location = new System.Drawing.Point(80, 179);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(53, 21);
-            this.lblNome.TabIndex = 2;
+            this.lblNome.TabIndex = 268;
             this.lblNome.Text = "Nome";
             // 
             // lblSenha
@@ -87,30 +85,34 @@ namespace QrCode
             this.lblSenha.Location = new System.Drawing.Point(80, 237);
             this.lblSenha.Name = "lblSenha";
             this.lblSenha.Size = new System.Drawing.Size(53, 21);
-            this.lblSenha.TabIndex = 3;
+            this.lblSenha.TabIndex = 366;
             this.lblSenha.Text = "Senha";
             // 
-            // textBox1
+            // txtCodigo
             // 
-            this.textBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBox1.Location = new System.Drawing.Point(165, 124);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(162, 23);
-            this.textBox1.TabIndex = 5;
+            this.txtCodigo.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtCodigo.Location = new System.Drawing.Point(165, 124);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(162, 23);
+            this.txtCodigo.TabIndex = 0;
             // 
-            // textBox2
+            // txtNome
             // 
-            this.textBox2.Location = new System.Drawing.Point(165, 181);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(274, 23);
-            this.textBox2.TabIndex = 6;
+            this.txtNome.Location = new System.Drawing.Point(165, 181);
+            this.txtNome.MaxLength = 40;
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(274, 23);
+            this.txtNome.TabIndex = 1;
             // 
-            // textBox3
+            // txtSenha
             // 
-            this.textBox3.Location = new System.Drawing.Point(165, 239);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(274, 23);
-            this.textBox3.TabIndex = 7;
+            this.txtSenha.Font = new System.Drawing.Font("Wingdings", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtSenha.Location = new System.Drawing.Point(165, 239);
+            this.txtSenha.MaxLength = 12;
+            this.txtSenha.Name = "txtSenha";
+            this.txtSenha.PasswordChar = 'l';
+            this.txtSenha.Size = new System.Drawing.Size(274, 21);
+            this.txtSenha.TabIndex = 2;
             // 
             // painelDeBotoes
             // 
@@ -121,7 +123,7 @@ namespace QrCode
             this.painelDeBotoes.Location = new System.Drawing.Point(1, 316);
             this.painelDeBotoes.Name = "painelDeBotoes";
             this.painelDeBotoes.Size = new System.Drawing.Size(796, 122);
-            this.painelDeBotoes.TabIndex = 16;
+            this.painelDeBotoes.TabIndex = 3;
             // 
             // btnExcluir
             // 
@@ -132,7 +134,7 @@ namespace QrCode
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnExcluir.Size = new System.Drawing.Size(165, 79);
-            this.btnExcluir.TabIndex = 6;
+            this.btnExcluir.TabIndex = 3;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnExcluir.UseVisualStyleBackColor = true;
@@ -145,7 +147,7 @@ namespace QrCode
             this.btnAlterar.Location = new System.Drawing.Point(412, 23);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(165, 79);
-            this.btnAlterar.TabIndex = 5;
+            this.btnAlterar.TabIndex = 2;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAlterar.UseVisualStyleBackColor = true;
@@ -158,7 +160,7 @@ namespace QrCode
             this.btnPesquisar.Location = new System.Drawing.Point(214, 22);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(165, 79);
-            this.btnPesquisar.TabIndex = 4;
+            this.btnPesquisar.TabIndex = 1;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnPesquisar.UseVisualStyleBackColor = true;
@@ -172,7 +174,7 @@ namespace QrCode
             this.btnCadastrar.Location = new System.Drawing.Point(16, 23);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(165, 79);
-            this.btnCadastrar.TabIndex = 3;
+            this.btnCadastrar.TabIndex = 0;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCadastrar.UseVisualStyleBackColor = true;
@@ -185,19 +187,11 @@ namespace QrCode
             this.btnVoltar.Location = new System.Drawing.Point(700, 12);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(88, 36);
-            this.btnVoltar.TabIndex = 7;
+            this.btnVoltar.TabIndex = 4;
             this.btnVoltar.Text = "Voltar";
             this.btnVoltar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
-            // 
-            // pctImagemFunc
-            // 
-            this.pctImagemFunc.Location = new System.Drawing.Point(510, 98);
-            this.pctImagemFunc.Name = "pctImagemFunc";
-            this.pctImagemFunc.Size = new System.Drawing.Size(242, 181);
-            this.pctImagemFunc.TabIndex = 17;
-            this.pctImagemFunc.TabStop = false;
             // 
             // pictureBox1
             // 
@@ -214,13 +208,13 @@ namespace QrCode
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ControlBox = false;
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnVoltar);
-            this.Controls.Add(this.pctImagemFunc);
             this.Controls.Add(this.painelDeBotoes);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtSenha);
+            this.Controls.Add(this.txtNome);
+            this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.lblSenha);
             this.Controls.Add(this.lblNome);
             this.Controls.Add(this.lblCódigo);
@@ -229,9 +223,9 @@ namespace QrCode
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmGerenciarFuncionarios";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "   ";
             this.painelDeBotoes.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pctImagemFunc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -244,16 +238,15 @@ namespace QrCode
         private System.Windows.Forms.Label lblCódigo;
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.Label lblSenha;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtCodigo;
+        private System.Windows.Forms.TextBox txtNome;
+        private System.Windows.Forms.TextBox txtSenha;
         private System.Windows.Forms.Panel painelDeBotoes;
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.Button btnCadastrar;
-        private System.Windows.Forms.PictureBox pctImagemFunc;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

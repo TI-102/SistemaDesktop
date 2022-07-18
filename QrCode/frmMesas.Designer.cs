@@ -59,7 +59,7 @@ namespace QrCode
             this.panel1.Location = new System.Drawing.Point(31, 66);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(275, 372);
-            this.panel1.TabIndex = 0;
+            this.panel1.TabIndex = 3;
             // 
             // btnExcluir
             // 
@@ -70,7 +70,7 @@ namespace QrCode
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnExcluir.Size = new System.Drawing.Size(165, 81);
-            this.btnExcluir.TabIndex = 11;
+            this.btnExcluir.TabIndex = 3;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnExcluir.UseVisualStyleBackColor = true;
@@ -83,7 +83,7 @@ namespace QrCode
             this.btnCadastrar.Location = new System.Drawing.Point(53, 11);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(165, 81);
-            this.btnCadastrar.TabIndex = 8;
+            this.btnCadastrar.TabIndex = 0;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCadastrar.UseVisualStyleBackColor = true;
@@ -96,7 +96,7 @@ namespace QrCode
             this.btnAlterar.Location = new System.Drawing.Point(53, 195);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(165, 81);
-            this.btnAlterar.TabIndex = 10;
+            this.btnAlterar.TabIndex = 2;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAlterar.UseVisualStyleBackColor = true;
@@ -109,7 +109,7 @@ namespace QrCode
             this.btnPesquisar.Location = new System.Drawing.Point(53, 103);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(165, 81);
-            this.btnPesquisar.TabIndex = 9;
+            this.btnPesquisar.TabIndex = 1;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnPesquisar.UseVisualStyleBackColor = true;
@@ -139,7 +139,7 @@ namespace QrCode
             this.lblQrcode.Location = new System.Drawing.Point(381, 149);
             this.lblQrcode.Name = "lblQrcode";
             this.lblQrcode.Size = new System.Drawing.Size(67, 18);
-            this.lblQrcode.TabIndex = 3;
+            this.lblQrcode.TabIndex = 343;
             this.lblQrcode.Text = "QRCode";
             // 
             // lblNumero
@@ -149,7 +149,7 @@ namespace QrCode
             this.lblNumero.Location = new System.Drawing.Point(381, 114);
             this.lblNumero.Name = "lblNumero";
             this.lblNumero.Size = new System.Drawing.Size(62, 18);
-            this.lblNumero.TabIndex = 4;
+            this.lblNumero.TabIndex = 423;
             this.lblNumero.Text = "Número";
             this.lblNumero.Click += new System.EventHandler(this.label2_Click);
             // 
@@ -160,7 +160,7 @@ namespace QrCode
             this.lblTitulo.Location = new System.Drawing.Point(2, 2);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(103, 40);
-            this.lblTitulo.TabIndex = 5;
+            this.lblTitulo.TabIndex = 555;
             this.lblTitulo.Text = "Mesas";
             // 
             // pctTitulo
@@ -180,7 +180,7 @@ namespace QrCode
             this.lblCodigo.Location = new System.Drawing.Point(381, 76);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(56, 18);
-            this.lblCodigo.TabIndex = 7;
+            this.lblCodigo.TabIndex = 711;
             this.lblCodigo.Text = "Código";
             this.lblCodigo.Click += new System.EventHandler(this.label4_Click);
             // 
@@ -192,7 +192,7 @@ namespace QrCode
             this.btnVoltar.Location = new System.Drawing.Point(700, 12);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(88, 36);
-            this.btnVoltar.TabIndex = 8;
+            this.btnVoltar.TabIndex = 4;
             this.btnVoltar.Text = "Voltar";
             this.btnVoltar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnVoltar.UseVisualStyleBackColor = true;
@@ -201,22 +201,25 @@ namespace QrCode
             // txtCodigo
             // 
             this.txtCodigo.Location = new System.Drawing.Point(449, 76);
+            this.txtCodigo.MaxLength = 32;
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(133, 23);
-            this.txtCodigo.TabIndex = 9;
+            this.txtCodigo.TabIndex = 0;
             // 
             // txtNumero
             // 
             this.txtNumero.Location = new System.Drawing.Point(449, 114);
+            this.txtNumero.MaxLength = 6;
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(133, 23);
-            this.txtNumero.TabIndex = 10;
+            this.txtNumero.TabIndex = 1;
             // 
             // frmMesas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ControlBox = false;
             this.Controls.Add(this.txtNumero);
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.btnVoltar);
@@ -232,7 +235,8 @@ namespace QrCode
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmMesas";
-            this.Text = "frmMesas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Gerenciar Mesas";
             this.Load += new System.EventHandler(this.frmMesas_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pctQrcode)).EndInit();

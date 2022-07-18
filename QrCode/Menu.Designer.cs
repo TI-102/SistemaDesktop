@@ -47,7 +47,7 @@ namespace QrCode
             btnFunc.Location = new System.Drawing.Point(406, 261);
             btnFunc.Name = "btnFunc";
             btnFunc.Size = new System.Drawing.Size(195, 177);
-            btnFunc.TabIndex = 2;
+            btnFunc.TabIndex = 3;
             btnFunc.Text = "Funcionários";
             btnFunc.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             btnFunc.UseVisualStyleBackColor = true;
@@ -74,7 +74,7 @@ namespace QrCode
             this.btnMesa.Location = new System.Drawing.Point(167, 261);
             this.btnMesa.Name = "btnMesa";
             this.btnMesa.Size = new System.Drawing.Size(195, 177);
-            this.btnMesa.TabIndex = 1;
+            this.btnMesa.TabIndex = 2;
             this.btnMesa.Text = "Mesas";
             this.btnMesa.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnMesa.UseVisualStyleBackColor = true;
@@ -88,7 +88,7 @@ namespace QrCode
             this.btnVendas.Location = new System.Drawing.Point(406, 65);
             this.btnVendas.Name = "btnVendas";
             this.btnVendas.Size = new System.Drawing.Size(195, 177);
-            this.btnVendas.TabIndex = 3;
+            this.btnVendas.TabIndex = 1;
             this.btnVendas.Text = "Vendas";
             this.btnVendas.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnVendas.UseVisualStyleBackColor = true;
@@ -101,7 +101,7 @@ namespace QrCode
             this.label1.Location = new System.Drawing.Point(0, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(225, 40);
-            this.label1.TabIndex = 4;
+            this.label1.TabIndex = 89;
             this.label1.Text = "Menu Principal";
             // 
             // btnVoltar
@@ -112,7 +112,7 @@ namespace QrCode
             this.btnVoltar.Location = new System.Drawing.Point(700, 12);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(88, 36);
-            this.btnVoltar.TabIndex = 9;
+            this.btnVoltar.TabIndex = 4;
             this.btnVoltar.Text = "Sair";
             this.btnVoltar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnVoltar.UseVisualStyleBackColor = true;
@@ -122,7 +122,9 @@ namespace QrCode
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ControlBox = false;
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnVendas);
@@ -133,6 +135,7 @@ namespace QrCode
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMenu_FormClosing);
             this.ResumeLayout(false);

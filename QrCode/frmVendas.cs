@@ -13,6 +13,9 @@ namespace QrCode
         public frmVendas()
         {
             InitializeComponent();
+            rbtData.TabStop = false;
+            rbtFuncionario.TabStop = false;
+            rbtMesa.TabStop = false;
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)

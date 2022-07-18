@@ -65,20 +65,27 @@ namespace QrCode
             // txtUsuario
             // 
             this.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtUsuario.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtUsuario.Location = new System.Drawing.Point(260, 176);
+            this.txtUsuario.MaxLength = 40;
             this.txtUsuario.Multiline = true;
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(269, 34);
-            this.txtUsuario.TabIndex = 2;
+            this.txtUsuario.Size = new System.Drawing.Size(269, 28);
+            this.txtUsuario.TabIndex = 0;
+            this.txtUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtSenha
             // 
             this.txtSenha.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSenha.Font = new System.Drawing.Font("Wingdings", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtSenha.Location = new System.Drawing.Point(260, 242);
+            this.txtSenha.MaxLength = 12;
             this.txtSenha.Multiline = true;
             this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(269, 36);
-            this.txtSenha.TabIndex = 3;
+            this.txtSenha.PasswordChar = 'l';
+            this.txtSenha.Size = new System.Drawing.Size(269, 28);
+            this.txtSenha.TabIndex = 1;
+            this.txtSenha.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnEntrar
             // 
@@ -88,7 +95,7 @@ namespace QrCode
             this.btnEntrar.Location = new System.Drawing.Point(243, 306);
             this.btnEntrar.Name = "btnEntrar";
             this.btnEntrar.Size = new System.Drawing.Size(127, 61);
-            this.btnEntrar.TabIndex = 5;
+            this.btnEntrar.TabIndex = 2;
             this.btnEntrar.Text = "Entrar";
             this.btnEntrar.UseVisualStyleBackColor = false;
             this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
@@ -101,7 +108,7 @@ namespace QrCode
             this.btnSair.Location = new System.Drawing.Point(402, 306);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(127, 61);
-            this.btnSair.TabIndex = 6;
+            this.btnSair.TabIndex = 3;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = false;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
@@ -113,7 +120,7 @@ namespace QrCode
             this.label1.Location = new System.Drawing.Point(3, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(94, 40);
-            this.label1.TabIndex = 7;
+            this.label1.TabIndex = 86;
             this.label1.Text = "Login";
             // 
             // btnCadastrar
@@ -124,7 +131,7 @@ namespace QrCode
             this.btnCadastrar.Location = new System.Drawing.Point(316, 377);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(155, 61);
-            this.btnCadastrar.TabIndex = 8;
+            this.btnCadastrar.TabIndex = 4;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = false;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
@@ -144,6 +151,7 @@ namespace QrCode
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(815, 450);
+            this.ControlBox = false;
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.label1);
@@ -156,6 +164,7 @@ namespace QrCode
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -62,7 +62,7 @@ namespace QrCode
             this.rbtData.Location = new System.Drawing.Point(232, 35);
             this.rbtData.Name = "rbtData";
             this.rbtData.Size = new System.Drawing.Size(53, 21);
-            this.rbtData.TabIndex = 12;
+            this.rbtData.TabIndex = 2;
             this.rbtData.TabStop = true;
             this.rbtData.Text = "Data";
             this.rbtData.UseVisualStyleBackColor = true;
@@ -74,7 +74,7 @@ namespace QrCode
             this.rbtMesa.Location = new System.Drawing.Point(137, 35);
             this.rbtMesa.Name = "rbtMesa";
             this.rbtMesa.Size = new System.Drawing.Size(58, 21);
-            this.rbtMesa.TabIndex = 11;
+            this.rbtMesa.TabIndex = 1;
             this.rbtMesa.TabStop = true;
             this.rbtMesa.Text = "Mesa";
             this.rbtMesa.UseVisualStyleBackColor = true;
@@ -86,7 +86,7 @@ namespace QrCode
             this.rbtFuncionario.Location = new System.Drawing.Point(7, 35);
             this.rbtFuncionario.Name = "rbtFuncionario";
             this.rbtFuncionario.Size = new System.Drawing.Size(93, 21);
-            this.rbtFuncionario.TabIndex = 10;
+            this.rbtFuncionario.TabIndex = 0;
             this.rbtFuncionario.TabStop = true;
             this.rbtFuncionario.Text = "Funcionário";
             this.rbtFuncionario.UseVisualStyleBackColor = true;
@@ -94,9 +94,10 @@ namespace QrCode
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(26, 111);
+            this.textBox1.MaxLength = 40;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(398, 23);
-            this.textBox1.TabIndex = 4;
+            this.textBox1.TabIndex = 1;
             // 
             // btnPesquisar
             // 
@@ -106,7 +107,7 @@ namespace QrCode
             this.btnPesquisar.Location = new System.Drawing.Point(488, 26);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(165, 79);
-            this.btnPesquisar.TabIndex = 5;
+            this.btnPesquisar.TabIndex = 2;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnPesquisar.UseVisualStyleBackColor = true;
@@ -119,7 +120,7 @@ namespace QrCode
             this.btnVoltar.Location = new System.Drawing.Point(674, 1);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(88, 36);
-            this.btnVoltar.TabIndex = 8;
+            this.btnVoltar.TabIndex = 4;
             this.btnVoltar.Text = "Voltar";
             this.btnVoltar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnVoltar.UseVisualStyleBackColor = true;
@@ -132,13 +133,14 @@ namespace QrCode
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(735, 252);
-            this.dataGridView1.TabIndex = 9;
+            this.dataGridView1.TabIndex = 3;
             // 
             // frmVendas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(762, 416);
+            this.ControlBox = false;
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnPesquisar);
@@ -149,6 +151,7 @@ namespace QrCode
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmVendas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmVendas";
             this.gpbPesquisar.ResumeLayout(false);
             this.gpbPesquisar.PerformLayout();
