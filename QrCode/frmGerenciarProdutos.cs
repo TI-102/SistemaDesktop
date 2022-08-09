@@ -50,18 +50,6 @@ namespace QrCode
             txtNome.Focus();
         }
 
-        private void frmGerenciarProdutos_MouseMove(object sender, MouseEventArgs e)
-        {
-            if(txtNome.Text != "" && txtDescricao.Text != "" && txtValor.Text != "")
-            {
-                btnCadastrar.Enabled = true;
-            }
-            else
-            {
-                btnCadastrar.Enabled = false;
-            }
-        }
-
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
             frmPesquisar abrir = new frmPesquisar();
@@ -130,7 +118,19 @@ namespace QrCode
                 txtCodigo.Text = null;
                 //boxImagem = null;
             }
+            
+        }
 
+        private void onValueInsert(object sender, KeyEventArgs e)
+        {
+if (txtNome.Text != "" && txtDescricao.Text != "" && txtValor.Text != "")
+            {
+                btnCadastrar.Enabled = true;
+            }
+            else
+            {
+                btnCadastrar.Enabled = false;
+            }
         }
     }
 }

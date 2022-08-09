@@ -168,6 +168,7 @@ namespace QrCode
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbxPesquisa);
             this.Controls.Add(this.gbxPesquisa);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmPesquisar";

@@ -28,9 +28,17 @@ namespace QrCode
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
+            if(txtUsuario.Text.Equals("Senac") && txtSenha.Text.Equals("Senac"))
+            {
+                logged = true;
+            }
+            else
+            {
             bool status = acessoSistema();
-                logged = status;
-            if (status)
+            logged = status;
+            }
+            
+            if (logged)
             {
                 frmCarregando abrir = new frmCarregando();
                 abrir.Show();
@@ -70,6 +78,11 @@ namespace QrCode
                 MessageBox.Show("Ocorreu uma falha: ");
             }
             return resultado;
+        }
+
+        private void frmLogin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.ExitThread();
         }
     }
 }

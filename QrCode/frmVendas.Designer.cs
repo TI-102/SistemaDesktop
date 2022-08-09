@@ -152,7 +152,7 @@ namespace QrCode
             this.MinimizeBox = false;
             this.Name = "frmVendas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmVendas";
+            this.Text = "Vendas";
             this.gpbPesquisar.ResumeLayout(false);
             this.gpbPesquisar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

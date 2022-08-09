@@ -44,20 +44,22 @@ namespace QrCode
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblUsuario.ForeColor = System.Drawing.Color.Firebrick;
-            this.lblUsuario.Location = new System.Drawing.Point(195, 218);
+            this.lblUsuario.Location = new System.Drawing.Point(190, 213);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(47, 15);
+            this.lblUsuario.Size = new System.Drawing.Size(64, 21);
             this.lblUsuario.TabIndex = 0;
             this.lblUsuario.Text = "Usuário";
             // 
             // lblSenha
             // 
             this.lblSenha.AutoSize = true;
+            this.lblSenha.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblSenha.ForeColor = System.Drawing.Color.Firebrick;
-            this.lblSenha.Location = new System.Drawing.Point(203, 262);
+            this.lblSenha.Location = new System.Drawing.Point(190, 257);
             this.lblSenha.Name = "lblSenha";
-            this.lblSenha.Size = new System.Drawing.Size(39, 15);
+            this.lblSenha.Size = new System.Drawing.Size(53, 21);
             this.lblSenha.TabIndex = 1;
             this.lblSenha.Text = "Senha";
             // 
@@ -71,7 +73,6 @@ namespace QrCode
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(269, 28);
             this.txtUsuario.TabIndex = 0;
-            this.txtUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtSenha
             // 
@@ -84,7 +85,6 @@ namespace QrCode
             this.txtSenha.PasswordChar = 'l';
             this.txtSenha.Size = new System.Drawing.Size(269, 28);
             this.txtSenha.TabIndex = 1;
-            this.txtSenha.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnEntrar
             // 
@@ -149,11 +149,13 @@ namespace QrCode
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.lblSenha);
             this.Controls.Add(this.lblUsuario);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmLogin_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

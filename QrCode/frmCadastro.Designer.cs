@@ -48,6 +48,7 @@ namespace QrCode
             // txtUsuario
             // 
             this.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtUsuario.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtUsuario.Location = new System.Drawing.Point(273, 168);
             this.txtUsuario.MaxLength = 40;
             this.txtUsuario.Multiline = true;
@@ -111,6 +112,7 @@ namespace QrCode
             // 
             // cbbCargo
             // 
+            this.cbbCargo.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbbCargo.FormattingEnabled = true;
             this.cbbCargo.Items.AddRange(new object[] {
             "Cozinheiro",
@@ -119,12 +121,13 @@ namespace QrCode
             ""});
             this.cbbCargo.Location = new System.Drawing.Point(273, 324);
             this.cbbCargo.Name = "cbbCargo";
-            this.cbbCargo.Size = new System.Drawing.Size(270, 23);
+            this.cbbCargo.Size = new System.Drawing.Size(270, 28);
             this.cbbCargo.TabIndex = 3;
             // 
             // txtSenha
             // 
             this.txtSenha.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSenha.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtSenha.Location = new System.Drawing.Point(273, 221);
             this.txtSenha.MaxLength = 12;
             this.txtSenha.Multiline = true;
@@ -135,6 +138,7 @@ namespace QrCode
             // txtConfirmar
             // 
             this.txtConfirmar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtConfirmar.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtConfirmar.Location = new System.Drawing.Point(273, 272);
             this.txtConfirmar.MaxLength = 12;
             this.txtConfirmar.Multiline = true;
@@ -171,9 +175,9 @@ namespace QrCode
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(320, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(299, 9);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(182, 126);
+            this.pictureBox1.Size = new System.Drawing.Size(212, 153);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 21;
             this.pictureBox1.TabStop = false;
@@ -201,7 +205,7 @@ namespace QrCode
             this.MinimizeBox = false;
             this.Name = "frmCadastro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmCadastro";
+            this.Text = "Cadastrar";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

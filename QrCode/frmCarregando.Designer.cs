@@ -75,9 +75,9 @@ namespace QrCode
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(216, 51);
+            this.pictureBox1.Location = new System.Drawing.Point(216, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(326, 234);
+            this.pictureBox1.Size = new System.Drawing.Size(326, 287);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
@@ -97,7 +97,7 @@ namespace QrCode
             this.MinimizeBox = false;
             this.Name = "frmCarregando";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmCarregando";
+            this.Text = "Carregando";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmCarregando_FormClosing);
             this.Load += new System.EventHandler(this.frmCarregando_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

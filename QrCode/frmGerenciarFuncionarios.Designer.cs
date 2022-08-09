@@ -224,7 +224,7 @@ namespace QrCode
             this.MinimizeBox = false;
             this.Name = "frmGerenciarFuncionarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "   ";
+            this.Text = "Funcionários";
             this.painelDeBotoes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

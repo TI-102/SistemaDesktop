@@ -189,6 +189,7 @@ namespace QrCode
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(326, 23);
             this.txtNome.TabIndex = 1;
+            this.txtNome.KeyUp += new System.Windows.Forms.KeyEventHandler(this.onValueInsert);
             // 
             // txtDescricao
             // 
@@ -197,6 +198,7 @@ namespace QrCode
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Size = new System.Drawing.Size(385, 23);
             this.txtDescricao.TabIndex = 2;
+            this.txtDescricao.KeyUp += new System.Windows.Forms.KeyEventHandler(this.onValueInsert);
             // 
             // lblValor
             // 
@@ -215,6 +217,7 @@ namespace QrCode
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(125, 23);
             this.txtValor.TabIndex = 3;
+            this.txtValor.KeyUp += new System.Windows.Forms.KeyEventHandler(this.onValueInsert);
             // 
             // pctImageProd
             // 
@@ -272,8 +275,7 @@ namespace QrCode
             this.MinimizeBox = false;
             this.Name = "frmGerenciarProdutos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Gerenciar Cardápio";
-            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.frmGerenciarProdutos_MouseMove);
+            this.Text = "Cardápio";
             this.painelDeBotoes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pctImageProd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctTitulo)).EndInit();

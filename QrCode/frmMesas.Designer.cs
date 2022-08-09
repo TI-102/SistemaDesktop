@@ -236,7 +236,7 @@ namespace QrCode
             this.MinimizeBox = false;
             this.Name = "frmMesas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Gerenciar Mesas";
+            this.Text = "Mesas";
             this.Load += new System.EventHandler(this.frmMesas_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pctQrcode)).EndInit();
