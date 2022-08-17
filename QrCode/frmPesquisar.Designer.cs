@@ -40,6 +40,7 @@ namespace QrCode
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.txtPesquisa = new System.Windows.Forms.TextBox();
             this.dgvPesquisa = new System.Windows.Forms.DataGridView();
+            this.lstDados = new System.Windows.Forms.ListBox();
             this.gbxPesquisa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPesquisa)).BeginInit();
             this.SuspendLayout();
@@ -149,11 +150,20 @@ namespace QrCode
             // dgvPesquisa
             // 
             this.dgvPesquisa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPesquisa.Location = new System.Drawing.Point(12, 211);
+            this.dgvPesquisa.Location = new System.Drawing.Point(723, 415);
             this.dgvPesquisa.Name = "dgvPesquisa";
             this.dgvPesquisa.RowTemplate.Height = 25;
-            this.dgvPesquisa.Size = new System.Drawing.Size(821, 319);
+            this.dgvPesquisa.Size = new System.Drawing.Size(110, 115);
             this.dgvPesquisa.TabIndex = 4;
+            // 
+            // lstDados
+            // 
+            this.lstDados.FormattingEnabled = true;
+            this.lstDados.ItemHeight = 15;
+            this.lstDados.Location = new System.Drawing.Point(38, 217);
+            this.lstDados.Name = "lstDados";
+            this.lstDados.Size = new System.Drawing.Size(545, 169);
+            this.lstDados.TabIndex = 6;
             // 
             // frmPesquisar
             // 
@@ -161,6 +171,7 @@ namespace QrCode
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(845, 542);
             this.ControlBox = false;
+            this.Controls.Add(this.lstDados);
             this.Controls.Add(this.dgvPesquisa);
             this.Controls.Add(this.txtPesquisa);
             this.Controls.Add(this.btnVoltar);
@@ -194,5 +205,6 @@ namespace QrCode
         private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.TextBox txtPesquisa;
         private System.Windows.Forms.DataGridView dgvPesquisa;
+        private System.Windows.Forms.ListBox lstDados;
     }
 }

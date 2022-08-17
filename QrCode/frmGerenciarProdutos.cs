@@ -66,7 +66,7 @@ namespace QrCode
             }
             catch(Exception error)
             {
-                MessageBox.Show("Ocorreu uma falha do tipo " + error.InnerException.Message);
+                MessageBox.Show("Ocorreu uma falha do tipo " + error.Message);
                 
                 Conexao.fecharConexao();
                 
@@ -85,6 +85,8 @@ namespace QrCode
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
+            try 
+            {
             MySqlCommand comm = new MySqlCommand();
             comm.CommandText = "UPDATE tbprodutos SET descricao = @descricao,nome = @nome," +
                 " valor = @valor,imagem = @imagem WHERE codigo = " + txtCodigo.Text;
@@ -100,20 +102,26 @@ namespace QrCode
             comm.Parameters.Add("@imagem", MySqlDbType.LongBlob, photo.Length).Value =
             photo;
             int res = comm.ExecuteNonQuery();
-            
-            Conexao.fecharConexao();
-            btnAdicionarImg.Enabled = false;
+            }
+            catch(Exception error)
+            {
+                MessageBox.Show("Ocorreu uma falha do tipo " + error.Message);
+                
+                Conexao.fecharConexao();
+                
+            }
+
+    Conexao.fecharConexao();
+            limparTudo();
             btnAlterar.Enabled = false;
             btnExcluir.Enabled = false;
-            txtDescricao.Text = null;
-            txtNome.Text = null;
-            txtValor.Text = null;
-            txtCodigo.Text = null;
-            pctImageProd.Image = null;
+            
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
+            try 
+            {
             MySqlCommand comm = new MySqlCommand();
             comm.CommandText = "DELETE FROM tbprodutos WHERE codigo=@codigo";
             comm.CommandType = CommandType.Text;
@@ -144,7 +152,15 @@ namespace QrCode
                 txtCodigo.Text = null;
                 pctImageProd.Image = null;
             }
-            
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Ocorreu uma falha do tipo " + error.Message);
+
+                Conexao.fecharConexao();
+
+            }
+
         }
 
         private void onValueInsert(object sender, KeyEventArgs e)
@@ -165,8 +181,7 @@ if (txtNome.Text != "" && txtDescricao.Text != "" && txtValor.Text != "")
         OpenFileDialog dlg = new OpenFileDialog();
             
                         dlg.Title = "Open Photo";
-                        dlg.Filter = "PNG (*.png)|*.png"
-                            + "|All files (*.*)|*.*";
+                        dlg.Filter = "PNG (*.png)|*.png´| JPG (*.jpg)|*.jpg | All files (*.*)|*.*";
 
                         if (dlg.ShowDialog() == DialogResult.OK)
                         {

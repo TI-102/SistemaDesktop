@@ -8,7 +8,7 @@ namespace QrCode
 {
     class Conexao
     {
-        private static string conString = "Server=localhost;Port=3306;Database=dbrestaurante;Uid=root;Pwd=''";
+        private static string conString = "Server=localhost;Port=3306;Database=dbrestaurant;Uid=root;Pwd=''";
         private static MySqlConnection con = null;
         public static MySqlConnection obterConexao()
         {
