@@ -20,11 +20,10 @@ namespace QrCode
             btnCadastrar.Enabled = false;
             btnAlterar.Enabled = false;
             btnExcluir.Enabled = false;
-            photo = null;
+            
         }
-        public static string _fname;
-
-        byte[] photo = GetPhoto(_fname);
+        private static string _fname;
+        private static byte[] photo;
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {
@@ -32,25 +31,8 @@ namespace QrCode
             abrir.Show();
             this.Hide();
         }
-
-        private void btnCadastrar_Click(object sender, EventArgs e)
+        private void limparTudo()
         {
-           
-                MySqlCommand comm = new MySqlCommand();
-                photo = GetPhoto(_fname);
-                comm.CommandText = "insert into tbprodutos (NOME,DESCRICAO,VALOR,IMAGEM) VALUES (@NOME, @DESCRICAO, @VALOR, @IMAGEM);";
-                comm.CommandType = CommandType.Text;
-                comm.Parameters.Clear();
-                comm.Parameters.Add("@NOME", MySqlDbType.VarChar, 50).Value = txtNome.Text;
-                comm.Parameters.Add("@DESCRICAO", MySqlDbType.VarChar, 200).Value = txtDescricao.Text;
-                comm.Parameters.Add("@VALOR", MySqlDbType.Decimal, 18).Value = txtValor.Text;
-                comm.Parameters.Add("@IMAGEM", MySqlDbType.LongBlob, photo.Length).Value = photo;
-                comm.CommandType = CommandType.Text;
-                comm.Connection = Conexao.obterConexao();
-                int res = comm.ExecuteNonQuery();
-                //res = Quantidade de linhas inseridas
-                Conexao.fecharConexao();
-            
             txtDescricao.Text = null;
             txtNome.Text = null;
             txtValor.Text = null;
@@ -58,6 +40,40 @@ namespace QrCode
             pctImageProd.Image = null;
             _fname = null;
             txtNome.Focus();
+        }
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+           
+            MySqlCommand comm = new MySqlCommand();
+            photo = GetPhoto(_fname);
+            try
+            {
+                comm.CommandText = "insert into tbprodutos (NOME,DESCRICAO,VALOR,IMAGEM) VALUES (@NOME, @DESCRICAO, @VALOR, @IMAGEM);";
+                comm.CommandType = CommandType.Text;
+                comm.Parameters.Clear();
+                comm.Parameters.Add("@NOME", MySqlDbType.VarChar, 50).Value = txtNome.Text;
+                comm.Parameters.Add("@DESCRICAO", MySqlDbType.VarChar, 200).Value = txtDescricao.Text;
+                comm.Parameters.Add("@VALOR", MySqlDbType.Decimal, 18).Value = txtValor.Text;
+                if(photo != null)
+                {
+                    comm.Parameters.Add("@IMAGEM", MySqlDbType.LongBlob, photo.Length).Value = photo;
+                }    
+                comm.CommandType = CommandType.Text;
+                comm.Connection = Conexao.obterConexao();
+                int res = comm.ExecuteNonQuery();
+                //res = Quantidade de linhas inseridas
+                Conexao.fecharConexao();
+            }
+            catch(Exception error)
+            {
+                MessageBox.Show("Ocorreu uma falha do tipo " + error.InnerException.Message);
+                
+                Conexao.fecharConexao();
+                
+            }
+            
+
+            limparTudo();
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)
@@ -93,7 +109,7 @@ namespace QrCode
             txtNome.Text = null;
             txtValor.Text = null;
             txtCodigo.Text = null;
-            //boxImagem = null;
+            pctImageProd.Image = null;
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
@@ -126,7 +142,7 @@ namespace QrCode
                 txtNome.Text = null;
                 txtValor.Text = null;
                 txtCodigo.Text = null;
-                //boxImagem = null;
+                pctImageProd.Image = null;
             }
             
         }
@@ -146,7 +162,7 @@ if (txtNome.Text != "" && txtDescricao.Text != "" && txtValor.Text != "")
         private void btnAdicionarImg_Click(object sender, EventArgs e)
         {
             
-OpenFileDialog dlg = new OpenFileDialog();
+        OpenFileDialog dlg = new OpenFileDialog();
             
                         dlg.Title = "Open Photo";
                         dlg.Filter = "PNG (*.png)|*.png"
@@ -169,25 +185,22 @@ OpenFileDialog dlg = new OpenFileDialog();
         }
         public static byte[] GetPhoto(string filePath)
         {
+            try
+            {
                 FileStream fs = new FileStream(filePath, FileMode.Open, FileAccess.Read);
                 BinaryReader br = new BinaryReader(fs);
 
-                byte[] photo = br.ReadBytes((int)fs.Length);
+                photo = br.ReadBytes((int)fs.Length);
 
                 br.Close();
                 fs.Close();
-            if(photo == null)
+            
+            }
+            catch (ArgumentNullException)
             {
                 MessageBox.Show("Por favor, insira uma imagem.");
-                
-            //    return ??;
             }
-            else
-            {
                 return photo;
-            }
-                
-
         }
         
     }
