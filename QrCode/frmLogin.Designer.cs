@@ -46,7 +46,7 @@ namespace QrCode
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblUsuario.ForeColor = System.Drawing.Color.Firebrick;
-            this.lblUsuario.Location = new System.Drawing.Point(190, 213);
+            this.lblUsuario.Location = new System.Drawing.Point(179, 213);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(64, 21);
             this.lblUsuario.TabIndex = 0;
@@ -65,25 +65,25 @@ namespace QrCode
             // 
             // txtUsuario
             // 
+            this.txtUsuario.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtUsuario.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtUsuario.Location = new System.Drawing.Point(260, 211);
-            this.txtUsuario.MaxLength = 40;
-            this.txtUsuario.Multiline = true;
+            this.txtUsuario.MaxLength = 50;
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(269, 28);
+            this.txtUsuario.Size = new System.Drawing.Size(269, 29);
             this.txtUsuario.TabIndex = 0;
             // 
             // txtSenha
             // 
+            this.txtSenha.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtSenha.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSenha.Font = new System.Drawing.Font("Wingdings", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtSenha.Location = new System.Drawing.Point(260, 259);
-            this.txtSenha.MaxLength = 12;
-            this.txtSenha.Multiline = true;
+            this.txtSenha.MaxLength = 50;
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = 'l';
-            this.txtSenha.Size = new System.Drawing.Size(269, 28);
+            this.txtSenha.Size = new System.Drawing.Size(269, 24);
             this.txtSenha.TabIndex = 1;
             // 
             // btnEntrar

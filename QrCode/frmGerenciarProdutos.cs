@@ -6,11 +6,13 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.IO;
 
 namespace QrCode
 {
     public partial class frmGerenciarProdutos : Form
     {
+        
         public frmGerenciarProdutos()
         {
             InitializeComponent();
@@ -18,7 +20,11 @@ namespace QrCode
             btnCadastrar.Enabled = false;
             btnAlterar.Enabled = false;
             btnExcluir.Enabled = false;
+            photo = null;
         }
+        public static string _fname;
+
+        byte[] photo = GetPhoto(_fname);
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {
@@ -29,24 +35,28 @@ namespace QrCode
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            MySqlCommand comm = new MySqlCommand();
-            comm.CommandText = "insert into tbprodutos (NOME,DESCRICAO,VALOR,IMAGEM) VALUES (@NOME, @DESCRICAO, @VALOR, @IMAGEM);";
-            comm.CommandType = CommandType.Text;
-            comm.Parameters.Clear();
-            comm.Parameters.Add("@NOME", MySqlDbType.VarChar, 50).Value = txtNome.Text;
-            comm.Parameters.Add("@DESCRICAO", MySqlDbType.VarChar, 200).Value = txtDescricao.Text;
-            comm.Parameters.Add("@VALOR", MySqlDbType.Decimal, 18).Value =txtValor.Text;
-            comm.Parameters.Add("@IMAGEM", MySqlDbType.LongBlob).Value = null;
-            comm.CommandType = CommandType.Text;
-            comm.Connection = Conexao.obterConexao();
-            int res = comm.ExecuteNonQuery();
-            //res = Quantidade de linhas inseridas
-            Conexao.fecharConexao();
-
+           
+                MySqlCommand comm = new MySqlCommand();
+                photo = GetPhoto(_fname);
+                comm.CommandText = "insert into tbprodutos (NOME,DESCRICAO,VALOR,IMAGEM) VALUES (@NOME, @DESCRICAO, @VALOR, @IMAGEM);";
+                comm.CommandType = CommandType.Text;
+                comm.Parameters.Clear();
+                comm.Parameters.Add("@NOME", MySqlDbType.VarChar, 50).Value = txtNome.Text;
+                comm.Parameters.Add("@DESCRICAO", MySqlDbType.VarChar, 200).Value = txtDescricao.Text;
+                comm.Parameters.Add("@VALOR", MySqlDbType.Decimal, 18).Value = txtValor.Text;
+                comm.Parameters.Add("@IMAGEM", MySqlDbType.LongBlob, photo.Length).Value = photo;
+                comm.CommandType = CommandType.Text;
+                comm.Connection = Conexao.obterConexao();
+                int res = comm.ExecuteNonQuery();
+                //res = Quantidade de linhas inseridas
+                Conexao.fecharConexao();
+            
             txtDescricao.Text = null;
             txtNome.Text = null;
             txtValor.Text = null;
             btnCadastrar.Enabled = false;
+            pctImageProd.Image = null;
+            _fname = null;
             txtNome.Focus();
         }
 
@@ -71,12 +81,12 @@ namespace QrCode
             txtNome.Text;
             comm.Parameters.Add("@valor", MySqlDbType.Decimal, 18).Value =
             txtValor.Text;
-            comm.Parameters.Add("@imagem", MySqlDbType.LongBlob).Value =
-            null;
+            comm.Parameters.Add("@imagem", MySqlDbType.LongBlob, photo.Length).Value =
+            photo;
             int res = comm.ExecuteNonQuery();
             
             Conexao.fecharConexao();
-            btnAdicionar.Enabled = false;
+            btnAdicionarImg.Enabled = false;
             btnAlterar.Enabled = false;
             btnExcluir.Enabled = false;
             txtDescricao.Text = null;
@@ -109,7 +119,7 @@ namespace QrCode
             {
                 comm.Parameters.Clear();
                 Conexao.fecharConexao();
-                btnAdicionar.Enabled = false;
+                btnAdicionarImg.Enabled = false;
                 btnAlterar.Enabled = false;
                 btnExcluir.Enabled = false;
                 txtDescricao.Text = null;
@@ -132,5 +142,53 @@ if (txtNome.Text != "" && txtDescricao.Text != "" && txtValor.Text != "")
                 btnCadastrar.Enabled = false;
             }
         }
+
+        private void btnAdicionarImg_Click(object sender, EventArgs e)
+        {
+            
+OpenFileDialog dlg = new OpenFileDialog();
+            
+                        dlg.Title = "Open Photo";
+                        dlg.Filter = "PNG (*.png)|*.png"
+                            + "|All files (*.*)|*.*";
+
+                        if (dlg.ShowDialog() == DialogResult.OK)
+                        {
+                            try
+                            {
+                                pctImageProd.Image = new Bitmap(dlg.OpenFile());
+                                _fname = dlg.FileName;
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("Unable to load file: " + ex.Message);
+                            }
+                        }
+            dlg.Dispose();
+
+        }
+        public static byte[] GetPhoto(string filePath)
+        {
+                FileStream fs = new FileStream(filePath, FileMode.Open, FileAccess.Read);
+                BinaryReader br = new BinaryReader(fs);
+
+                byte[] photo = br.ReadBytes((int)fs.Length);
+
+                br.Close();
+                fs.Close();
+            if(photo == null)
+            {
+                MessageBox.Show("Por favor, insira uma imagem.");
+                
+            //    return ??;
+            }
+            else
+            {
+                return photo;
+            }
+                
+
+        }
+        
     }
 }

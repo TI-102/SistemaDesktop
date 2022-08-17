@@ -44,10 +44,10 @@ namespace QrCode
             this.txtNome = new System.Windows.Forms.TextBox();
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.lblValor = new System.Windows.Forms.Label();
-            this.txtValor = new System.Windows.Forms.TextBox();
             this.pctImageProd = new System.Windows.Forms.PictureBox();
-            this.btnAdicionar = new System.Windows.Forms.Button();
+            this.btnAdicionarImg = new System.Windows.Forms.Button();
             this.pctTitulo = new System.Windows.Forms.PictureBox();
+            this.txtValor = new System.Windows.Forms.TextBox();
             this.painelDeBotoes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctImageProd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctTitulo)).BeginInit();
@@ -210,15 +210,6 @@ namespace QrCode
             this.lblValor.TabIndex = 131;
             this.lblValor.Text = "Valor";
             // 
-            // txtValor
-            // 
-            this.txtValor.Location = new System.Drawing.Point(111, 261);
-            this.txtValor.MaxLength = 12;
-            this.txtValor.Name = "txtValor";
-            this.txtValor.Size = new System.Drawing.Size(125, 23);
-            this.txtValor.TabIndex = 3;
-            this.txtValor.KeyUp += new System.Windows.Forms.KeyEventHandler(this.onValueInsert);
-            // 
             // pctImageProd
             // 
             this.pctImageProd.Location = new System.Drawing.Point(533, 78);
@@ -228,15 +219,16 @@ namespace QrCode
             this.pctImageProd.TabIndex = 14;
             this.pctImageProd.TabStop = false;
             // 
-            // btnAdicionar
+            // btnAdicionarImg
             // 
-            this.btnAdicionar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnAdicionar.Location = new System.Drawing.Point(566, 276);
-            this.btnAdicionar.Name = "btnAdicionar";
-            this.btnAdicionar.Size = new System.Drawing.Size(180, 40);
-            this.btnAdicionar.TabIndex = 4;
-            this.btnAdicionar.Text = "Adicionar Imagem";
-            this.btnAdicionar.UseVisualStyleBackColor = true;
+            this.btnAdicionarImg.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAdicionarImg.Location = new System.Drawing.Point(566, 276);
+            this.btnAdicionarImg.Name = "btnAdicionarImg";
+            this.btnAdicionarImg.Size = new System.Drawing.Size(180, 40);
+            this.btnAdicionarImg.TabIndex = 4;
+            this.btnAdicionarImg.Text = "Adicionar Imagem";
+            this.btnAdicionarImg.UseVisualStyleBackColor = true;
+            this.btnAdicionarImg.Click += new System.EventHandler(this.btnAdicionarImg_Click);
             // 
             // pctTitulo
             // 
@@ -248,17 +240,25 @@ namespace QrCode
             this.pctTitulo.TabIndex = 16;
             this.pctTitulo.TabStop = false;
             // 
+            // txtValor
+            // 
+            this.txtValor.Location = new System.Drawing.Point(111, 262);
+            this.txtValor.Name = "txtValor";
+            this.txtValor.Size = new System.Drawing.Size(100, 23);
+            this.txtValor.TabIndex = 3;
+            this.txtValor.KeyUp += new System.Windows.Forms.KeyEventHandler(this.onValueInsert);
+            // 
             // frmGerenciarProdutos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.ControlBox = false;
+            this.Controls.Add(this.txtValor);
             this.Controls.Add(this.pctTitulo);
             this.Controls.Add(this.btnVoltar);
-            this.Controls.Add(this.btnAdicionar);
+            this.Controls.Add(this.btnAdicionarImg);
             this.Controls.Add(this.pctImageProd);
-            this.Controls.Add(this.txtValor);
             this.Controls.Add(this.lblValor);
             this.Controls.Add(this.txtDescricao);
             this.Controls.Add(this.txtNome);
@@ -300,9 +300,9 @@ namespace QrCode
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.TextBox txtDescricao;
         private System.Windows.Forms.Label lblValor;
-        private System.Windows.Forms.TextBox txtValor;
         private System.Windows.Forms.PictureBox pctImageProd;
-        private System.Windows.Forms.Button btnAdicionar;
+        private System.Windows.Forms.Button btnAdicionarImg;
         private System.Windows.Forms.PictureBox pctTitulo;
+        private System.Windows.Forms.TextBox txtValor;
     }
 }

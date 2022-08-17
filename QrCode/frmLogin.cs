@@ -64,7 +64,7 @@ namespace QrCode
             {
                 Conexao.obterConexao();
                 MySqlCommand comm = new MySqlCommand();
-                comm.CommandText = "SELECT * FROM tbfuncionarios WHERE username='" + txtUsuario.Text + "'AND senha = '" + txtSenha.Text + "'";
+                comm.CommandText = "SELECT * FROM tbfuncionarios WHERE nome='" + txtUsuario.Text + "'AND senha = '" + txtSenha.Text + "'";
                 comm.CommandType = CommandType.Text;
                 comm.Connection = Conexao.obterConexao();
                 MySqlDataReader DR;
