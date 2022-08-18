@@ -22,6 +22,7 @@ namespace QrCode
             btnExcluir.Enabled = false;
             
         }
+        private string idPesquisado;
         private static string _fname;
         private static byte[] photo;
 
@@ -79,6 +80,7 @@ namespace QrCode
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
             frmPesquisar abrir = new frmPesquisar();
+            limparTudo();
             this.Hide();
             abrir.Show();
         }
@@ -89,7 +91,7 @@ namespace QrCode
             {
             MySqlCommand comm = new MySqlCommand();
             comm.CommandText = "UPDATE tbprodutos SET descricao = @descricao,nome = @nome," +
-                " valor = @valor,imagem = @imagem WHERE codigo = " + txtCodigo.Text;
+                " valor = @valor,imagem = @imagem WHERE id = " + txtCodigo.Text;
             comm.CommandType = CommandType.Text;
             comm.Connection = Conexao.obterConexao();
             comm.Parameters.Clear();
@@ -123,7 +125,7 @@ namespace QrCode
             try 
             {
             MySqlCommand comm = new MySqlCommand();
-            comm.CommandText = "DELETE FROM tbprodutos WHERE codigo=@codigo";
+            comm.CommandText = "DELETE FROM tbprodutos WHERE id=@codigo";
             comm.CommandType = CommandType.Text;
             comm.Connection = Conexao.obterConexao();
             comm.Parameters.Clear();
@@ -181,7 +183,7 @@ if (txtNome.Text != "" && txtDescricao.Text != "" && txtValor.Text != "")
         OpenFileDialog dlg = new OpenFileDialog();
             
                         dlg.Title = "Open Photo";
-                        dlg.Filter = "PNG (*.png)|*.png´| JPG (*.jpg)|*.jpg | All files (*.*)|*.*";
+                        dlg.Filter = "PNG (*.png)|*.png | All files (*.*)|*.*";
 
                         if (dlg.ShowDialog() == DialogResult.OK)
                         {
@@ -217,6 +219,60 @@ if (txtNome.Text != "" && txtDescricao.Text != "" && txtValor.Text != "")
             }
                 return photo;
         }
-        
+
+        private void frmGerenciarProdutos_Load(object sender, EventArgs e)
+        {
+            frmPesquisar frmPesquisar = new frmPesquisar();
+            idPesquisado = frmPesquisar.itemPesquisado;
+            txtCodigo.Text = idPesquisado;
+            if (txtCodigo.Text != null)
+            {
+                btnAlterar.Enabled = true;
+                btnExcluir.Enabled = true;
+            }
+            try
+            {
+                FileStream fs;                
+                int bufferSize = 100;
+                byte[] bin = new byte[bufferSize];
+                long retval = 0;
+                long startIndex = 0;
+
+
+
+                MySqlCommand comm = new MySqlCommand();
+                comm.CommandText = "select * from tbprodutos where id="+txtCodigo.Text;
+                comm.CommandType = CommandType.Text;
+                comm.Connection = Conexao.obterConexao();
+                MySqlDataReader DR;
+                DR = comm.ExecuteReader();
+                
+
+                while (DR.Read())
+                {
+                    txtNome.Text = DR.GetString(1);
+                    txtDescricao.Text = DR.GetString(2);
+                    txtValor.Text = DR.GetString(3);
+
+                    byte[] img = (byte[])DR["imagem"];
+
+                    MemoryStream ms = new MemoryStream(img);
+                    
+                    ms.Seek(0, SeekOrigin.Begin);
+         
+                    pctImageProd.Image = Image.FromStream(ms);
+
+
+                }
+
+            }
+            catch (MySqlException)
+            {
+
+            }
+            frmPesquisar.itemPesquisado = null;
+            
+            
+        }
     }
 }

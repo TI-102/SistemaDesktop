@@ -276,6 +276,7 @@ namespace QrCode
             this.Name = "frmGerenciarProdutos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cardápio";
+            this.Load += new System.EventHandler(this.frmGerenciarProdutos_Load);
             this.painelDeBotoes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pctImageProd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctTitulo)).EndInit();

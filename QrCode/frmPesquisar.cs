@@ -6,7 +6,6 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-using System.Data;
 
 namespace QrCode
 {
@@ -15,17 +14,21 @@ namespace QrCode
         public frmPesquisar()
         {
             InitializeComponent();
+            txtPesquisa.Enabled = false;
             rbtCodigo.TabStop = false;
             rbtNome.TabStop = false;
             rbtNumero.TabStop = false;
-
+            
         }
-        private string campo;
+        public string campo;
+        public static string itemPesquisado;
+        
+       
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
-            
 
             string i;
+            
             if(cbxPesquisa.SelectedIndex < 0)
             {
             i = "a";
@@ -42,21 +45,28 @@ namespace QrCode
                     //this.Hide();
                     break;
                 case "Produtos":
-                    //frmGerenciarProdutos abrirProd = new frmGerenciarProdutos();
-                    //abrirProd.Show();
-                    //this.Hide();
-                    MySqlCommand comm = new MySqlCommand();
-                    comm.CommandText = "select * from tbprodutos where " + campo +
-        " like '%" + txtPesquisa.Text + "%'; ";
-                    comm.CommandType = CommandType.Text;
-                    comm.Connection = Conexao.obterConexao();
-                    MySqlDataReader DR;
-                    DR = comm.ExecuteReader();
-                    lstDados.Items.Clear();
-                    while (DR.Read())
+                    
+                    if (campo.Equals("nome") || campo.Equals("id"))
                     {
-                        lstDados.Items.Add(DR.GetInt32(0) + " - " + DR.GetString(1) + " - " +
-                            DR.GetString(3));
+                        MySqlCommand comm = new MySqlCommand();
+                        comm.CommandText = "select * from tbprodutos where " + campo +
+            " like '%" + txtPesquisa.Text + "%'; ";
+                        comm.CommandType = CommandType.Text;
+                        comm.Connection = Conexao.obterConexao();
+                        MySqlDataReader DR;
+                        DR = comm.ExecuteReader();
+                        lstDados.Items.Clear();
+                        while (DR.Read())
+                        {
+                            lstDados.Items.Add(DR.GetInt32(0) + " - " + DR.GetString(1) + " - " +
+                                DR.GetString(3));
+
+                        }
+                    }
+                    else
+                    {
+                        rbtNumero.Checked = false;
+                        rbtCodigo.Checked = true;
                     }
                     break;
                 case "Mesas":
@@ -71,6 +81,7 @@ namespace QrCode
 
             }
         }
+
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {
@@ -97,6 +108,15 @@ namespace QrCode
             {
                 campo = "numero";
             }
+        }
+
+        private void lstDados_DoubleClick(object sender, EventArgs e)
+        {
+            string[] selectedItem = lstDados.SelectedItem.ToString().Split(" - ");
+            itemPesquisado = selectedItem[0];
+            frmGerenciarProdutos abrirProd = new frmGerenciarProdutos();
+            abrirProd.Show();
+            this.Hide();
         }
     }
 }

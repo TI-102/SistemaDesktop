@@ -39,10 +39,8 @@ namespace QrCode
             this.btnVoltar = new System.Windows.Forms.Button();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.txtPesquisa = new System.Windows.Forms.TextBox();
-            this.dgvPesquisa = new System.Windows.Forms.DataGridView();
             this.lstDados = new System.Windows.Forms.ListBox();
             this.gbxPesquisa.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPesquisa)).BeginInit();
             this.SuspendLayout();
             // 
             // gbxPesquisa
@@ -95,9 +93,9 @@ namespace QrCode
             this.cbxPesquisa.FormattingEnabled = true;
             this.cbxPesquisa.Items.AddRange(new object[] {
             "Funcionários",
-            "Mesas",
-            "Produtos"});
-            this.cbxPesquisa.Location = new System.Drawing.Point(187, 42);
+            "Produtos",
+            "Mesas"});
+            this.cbxPesquisa.Location = new System.Drawing.Point(197, 77);
             this.cbxPesquisa.Name = "cbxPesquisa";
             this.cbxPesquisa.Size = new System.Drawing.Size(169, 23);
             this.cbxPesquisa.TabIndex = 1;
@@ -105,7 +103,7 @@ namespace QrCode
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(187, 24);
+            this.label1.Location = new System.Drawing.Point(197, 59);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(80, 15);
             this.label1.TabIndex = 2;
@@ -116,7 +114,7 @@ namespace QrCode
             this.btnVoltar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnVoltar.Image = ((System.Drawing.Image)(resources.GetObject("btnVoltar.Image")));
             this.btnVoltar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVoltar.Location = new System.Drawing.Point(745, 12);
+            this.btnVoltar.Location = new System.Drawing.Point(350, 12);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(88, 36);
             this.btnVoltar.TabIndex = 5;
@@ -130,7 +128,7 @@ namespace QrCode
             this.btnPesquisar.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnPesquisar.Image = ((System.Drawing.Image)(resources.GetObject("btnPesquisar.Image")));
             this.btnPesquisar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPesquisar.Location = new System.Drawing.Point(668, 86);
+            this.btnPesquisar.Location = new System.Drawing.Point(283, 188);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(165, 81);
             this.btnPesquisar.TabIndex = 3;
@@ -141,38 +139,29 @@ namespace QrCode
             // 
             // txtPesquisa
             // 
-            this.txtPesquisa.Location = new System.Drawing.Point(12, 173);
+            this.txtPesquisa.Location = new System.Drawing.Point(12, 222);
             this.txtPesquisa.MaxLength = 40;
             this.txtPesquisa.Name = "txtPesquisa";
-            this.txtPesquisa.Size = new System.Drawing.Size(821, 23);
+            this.txtPesquisa.Size = new System.Drawing.Size(237, 23);
             this.txtPesquisa.TabIndex = 2;
-            // 
-            // dgvPesquisa
-            // 
-            this.dgvPesquisa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPesquisa.Location = new System.Drawing.Point(723, 415);
-            this.dgvPesquisa.Name = "dgvPesquisa";
-            this.dgvPesquisa.RowTemplate.Height = 25;
-            this.dgvPesquisa.Size = new System.Drawing.Size(110, 115);
-            this.dgvPesquisa.TabIndex = 4;
             // 
             // lstDados
             // 
             this.lstDados.FormattingEnabled = true;
             this.lstDados.ItemHeight = 15;
-            this.lstDados.Location = new System.Drawing.Point(38, 217);
+            this.lstDados.Location = new System.Drawing.Point(463, 12);
             this.lstDados.Name = "lstDados";
-            this.lstDados.Size = new System.Drawing.Size(545, 169);
+            this.lstDados.Size = new System.Drawing.Size(295, 439);
             this.lstDados.TabIndex = 6;
+            this.lstDados.DoubleClick += new System.EventHandler(this.lstDados_DoubleClick);
             // 
             // frmPesquisar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(845, 542);
+            this.ClientSize = new System.Drawing.Size(776, 479);
             this.ControlBox = false;
             this.Controls.Add(this.lstDados);
-            this.Controls.Add(this.dgvPesquisa);
             this.Controls.Add(this.txtPesquisa);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnPesquisar);
@@ -187,7 +176,6 @@ namespace QrCode
             this.Text = "Pesquisar";
             this.gbxPesquisa.ResumeLayout(false);
             this.gbxPesquisa.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPesquisa)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -204,7 +192,6 @@ namespace QrCode
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.TextBox txtPesquisa;
-        private System.Windows.Forms.DataGridView dgvPesquisa;
         private System.Windows.Forms.ListBox lstDados;
     }
 }
