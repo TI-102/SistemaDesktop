@@ -91,7 +91,7 @@ namespace QrCode
             {
             MySqlCommand comm = new MySqlCommand();
             comm.CommandText = "UPDATE tbprodutos SET descricao = @descricao,nome = @nome," +
-                " valor = @valor,imagem = @imagem WHERE id = " + txtCodigo.Text;
+                " valor = @valor WHERE id = " + txtCodigo.Text;
             comm.CommandType = CommandType.Text;
             comm.Connection = Conexao.obterConexao();
             comm.Parameters.Clear();
@@ -101,8 +101,7 @@ namespace QrCode
             txtNome.Text;
             comm.Parameters.Add("@valor", MySqlDbType.Decimal, 18).Value =
             txtValor.Text;
-            comm.Parameters.Add("@imagem", MySqlDbType.LongBlob, photo.Length).Value =
-            photo;
+            
             int res = comm.ExecuteNonQuery();
             }
             catch(Exception error)
@@ -183,7 +182,7 @@ if (txtNome.Text != "" && txtDescricao.Text != "" && txtValor.Text != "")
         OpenFileDialog dlg = new OpenFileDialog();
             
                         dlg.Title = "Open Photo";
-                        dlg.Filter = "PNG (*.png)|*.png | All files (*.*)|*.*";
+                        dlg.Filter = "All files (*.*)|*.*";
 
                         if (dlg.ShowDialog() == DialogResult.OK)
                         {
@@ -225,21 +224,10 @@ if (txtNome.Text != "" && txtDescricao.Text != "" && txtValor.Text != "")
             frmPesquisar frmPesquisar = new frmPesquisar();
             idPesquisado = frmPesquisar.itemPesquisado;
             txtCodigo.Text = idPesquisado;
-            if (txtCodigo.Text != null)
-            {
-                btnAlterar.Enabled = true;
-                btnExcluir.Enabled = true;
-            }
+
+
             try
             {
-                FileStream fs;                
-                int bufferSize = 100;
-                byte[] bin = new byte[bufferSize];
-                long retval = 0;
-                long startIndex = 0;
-
-
-
                 MySqlCommand comm = new MySqlCommand();
                 comm.CommandText = "select * from tbprodutos where id="+txtCodigo.Text;
                 comm.CommandType = CommandType.Text;
@@ -270,9 +258,26 @@ if (txtNome.Text != "" && txtDescricao.Text != "" && txtValor.Text != "")
             {
 
             }
+
             frmPesquisar.itemPesquisado = null;
             
             
+        }
+
+        private void txtCodigo_TextChanged(object sender, EventArgs e)
+        {
+            if(txtCodigo.Text != null)
+            {
+                btnAlterar.Enabled = true;
+                btnExcluir.Enabled = true;
+                btnAdicionarImg.Enabled = false;
+            }
+            else
+            {
+                btnAlterar.Enabled = false;
+                btnExcluir.Enabled = false;
+                btnAdicionarImg.Enabled = true;
+            }
         }
     }
 }
