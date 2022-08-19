@@ -40,6 +40,7 @@ namespace QrCode
             btnCadastrar.Enabled = false;
             pctImageProd.Image = null;
             _fname = null;
+            txtCodigo.Text = null;
             txtNome.Focus();
         }
         private void btnCadastrar_Click(object sender, EventArgs e)
@@ -67,7 +68,7 @@ namespace QrCode
             }
             catch(Exception error)
             {
-                MessageBox.Show("Ocorreu uma falha do tipo " + error.Message);
+                MessageBox.Show("Ocorreu uma falha: " + error.Message);
                 
                 Conexao.fecharConexao();
                 
@@ -89,27 +90,28 @@ namespace QrCode
         {
             try 
             {
-            MySqlCommand comm = new MySqlCommand();
-            comm.CommandText = "UPDATE tbprodutos SET descricao = @descricao,nome = @nome," +
-                " valor = @valor WHERE id = " + txtCodigo.Text;
-            comm.CommandType = CommandType.Text;
-            comm.Connection = Conexao.obterConexao();
-            comm.Parameters.Clear();
-            comm.Parameters.Add("@descricao", MySqlDbType.VarChar, 200).Value =
-            txtDescricao.Text;
-            comm.Parameters.Add("@nome", MySqlDbType.VarChar, 50).Value =
-            txtNome.Text;
-            comm.Parameters.Add("@valor", MySqlDbType.Decimal, 18).Value =
-            txtValor.Text;
+                
+                    MySqlCommand comm = new MySqlCommand();
+                    comm.CommandText = "UPDATE tbprodutos SET descricao = @descricao,nome = @nome," +
+                        " valor = @valor WHERE id = " + txtCodigo.Text;
+                    comm.CommandType = CommandType.Text;
+                    comm.Connection = Conexao.obterConexao();
+                    comm.Parameters.Clear();
+                    comm.Parameters.Add("@descricao", MySqlDbType.VarChar, 200).Value =
+                    txtDescricao.Text;
+                    comm.Parameters.Add("@nome", MySqlDbType.VarChar, 50).Value =
+                    txtNome.Text;
+                    comm.Parameters.Add("@valor", MySqlDbType.Decimal, 18).Value =
+                    txtValor.Text;
             
-            int res = comm.ExecuteNonQuery();
+                    int res = comm.ExecuteNonQuery();
+
             }
             catch(Exception error)
             {
-                MessageBox.Show("Ocorreu uma falha do tipo " + error.Message);
+                MessageBox.Show("Ocorreu uma falha: " + error.Message);
                 
                 Conexao.fecharConexao();
-                
             }
 
     Conexao.fecharConexao();
@@ -139,12 +141,17 @@ namespace QrCode
                 int res = comm.ExecuteNonQuery();
                 MessageBox.Show("Registro Excluido com Sucesso!!! ");
                 comm.Parameters.Clear();
+                pctImageProd.Image = null;
+                btnAdicionarImg.Enabled = true;
+                    btnAdicionarImg.Focus();
+                    btnAlterar.Enabled = false;
+                    btnCadastrar.Enabled = true;
             }
             else if (vresp == DialogResult.No)
             {
                 comm.Parameters.Clear();
                 Conexao.fecharConexao();
-                btnAdicionarImg.Enabled = false;
+                btnAdicionarImg.Enabled = true;
                 btnAlterar.Enabled = false;
                 btnExcluir.Enabled = false;
                 txtDescricao.Text = null;
@@ -221,6 +228,8 @@ if (txtNome.Text != "" && txtDescricao.Text != "" && txtValor.Text != "")
 
         private void frmGerenciarProdutos_Load(object sender, EventArgs e)
         {
+            limparTudo();
+            txtNome.Focus();
             frmPesquisar frmPesquisar = new frmPesquisar();
             idPesquisado = frmPesquisar.itemPesquisado;
             txtCodigo.Text = idPesquisado;
@@ -271,12 +280,14 @@ if (txtNome.Text != "" && txtDescricao.Text != "" && txtValor.Text != "")
                 btnAlterar.Enabled = true;
                 btnExcluir.Enabled = true;
                 btnAdicionarImg.Enabled = false;
+                lblMsg.Text = "Para Alterar imagem, clique em deletar.";
             }
             else
             {
                 btnAlterar.Enabled = false;
                 btnExcluir.Enabled = false;
                 btnAdicionarImg.Enabled = true;
+                lblMsg.Text = null;
             }
         }
     }

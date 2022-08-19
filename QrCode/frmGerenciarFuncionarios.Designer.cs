@@ -43,9 +43,10 @@ namespace QrCode
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pcbIcone = new System.Windows.Forms.PictureBox();
+            this.lblCargo = new System.Windows.Forms.Label();
             this.painelDeBotoes.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbIcone)).BeginInit();
             this.SuspendLayout();
             // 
             // lblGerenciarFuncionario
@@ -95,6 +96,7 @@ namespace QrCode
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(162, 23);
             this.txtCodigo.TabIndex = 0;
+            this.txtCodigo.TextChanged += new System.EventHandler(this.txtCodigo_TextChanged);
             // 
             // txtNome
             // 
@@ -138,6 +140,7 @@ namespace QrCode
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnAlterar
             // 
@@ -151,6 +154,7 @@ namespace QrCode
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // btnPesquisar
             // 
@@ -193,15 +197,24 @@ namespace QrCode
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
-            // pictureBox1
+            // pcbIcone
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(329, 9);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(94, 57);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 18;
-            this.pictureBox1.TabStop = false;
+            this.pcbIcone.Image = ((System.Drawing.Image)(resources.GetObject("pcbIcone.Image")));
+            this.pcbIcone.Location = new System.Drawing.Point(329, 9);
+            this.pcbIcone.Name = "pcbIcone";
+            this.pcbIcone.Size = new System.Drawing.Size(94, 57);
+            this.pcbIcone.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pcbIcone.TabIndex = 18;
+            this.pcbIcone.TabStop = false;
+            // 
+            // lblCargo
+            // 
+            this.lblCargo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblCargo.Location = new System.Drawing.Point(465, 181);
+            this.lblCargo.Name = "lblCargo";
+            this.lblCargo.Size = new System.Drawing.Size(151, 23);
+            this.lblCargo.TabIndex = 367;
+            this.lblCargo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // frmGerenciarFuncionarios
             // 
@@ -209,7 +222,8 @@ namespace QrCode
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.ControlBox = false;
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.lblCargo);
+            this.Controls.Add(this.pcbIcone);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.painelDeBotoes);
             this.Controls.Add(this.txtSenha);
@@ -225,8 +239,9 @@ namespace QrCode
             this.Name = "frmGerenciarFuncionarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Funcionários";
+            this.Load += new System.EventHandler(this.frmGerenciarFuncionarios_Load);
             this.painelDeBotoes.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbIcone)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -247,6 +262,7 @@ namespace QrCode
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.Button btnCadastrar;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pcbIcone;
+        private System.Windows.Forms.Label lblCargo;
     }
 }

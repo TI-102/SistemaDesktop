@@ -99,6 +99,8 @@ namespace QrCode
             this.cbxPesquisa.Name = "cbxPesquisa";
             this.cbxPesquisa.Size = new System.Drawing.Size(169, 23);
             this.cbxPesquisa.TabIndex = 1;
+            this.cbxPesquisa.SelectedIndexChanged += new System.EventHandler(this.cbxPesquisa_SelectedIndexChanged);
+            this.cbxPesquisa.Enter += new System.EventHandler(this.cbxPesquisa_Enter);
             // 
             // label1
             // 

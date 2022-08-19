@@ -7,35 +7,37 @@ using System.Text;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
+
 namespace QrCode
 {
     public partial class frmPesquisar : Form
     {
         public frmPesquisar()
         {
+
             InitializeComponent();
             txtPesquisa.Enabled = false;
-            rbtCodigo.TabStop = false;
+            rbtCodigo.TabStop = true;
             rbtNome.TabStop = false;
             rbtNumero.TabStop = false;
-            
+
         }
         public string campo;
         public static string itemPesquisado;
-        
-       
+
+
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
 
             string i;
-            
-            if(cbxPesquisa.SelectedIndex < 0)
+
+            if (cbxPesquisa.SelectedIndex < 0)
             {
-            i = "a";
+                i = "a";
             }
             else
             {
-            i = cbxPesquisa.SelectedItem.ToString();
+                i = cbxPesquisa.SelectedItem.ToString();
             }
             switch (i)
             {
@@ -43,9 +45,34 @@ namespace QrCode
                     //frmGerenciarFuncionarios abrirFunc = new frmGerenciarFuncionarios();
                     //abrirFunc.Show();
                     //this.Hide();
+                    if (campo.Equals("nome") || campo.Equals("id"))
+                    {
+                        MySqlCommand comm = new MySqlCommand();
+                        comm.CommandText = "select * from tbfuncionarios where " + campo +
+            " like '%" + txtPesquisa.Text + "%'; ";
+                        comm.CommandType = CommandType.Text;
+                        comm.Connection = Conexao.obterConexao();
+                        MySqlDataReader DR;
+                        DR = comm.ExecuteReader();
+                        lstDados.Items.Clear();
+                        while (DR.Read())
+                        {
+
+                            lstDados.Items.Add(DR.GetInt32(0) + " - " + DR.GetString(1) + " - **********");
+
+                        }
+                        Conexao.fecharConexao();
+                    }
+                    else
+                    {
+                        rbtNumero.Checked = false;
+                        rbtCodigo.Checked = true;
+                    }
+
+
                     break;
                 case "Produtos":
-                    
+
                     if (campo.Equals("nome") || campo.Equals("id"))
                     {
                         MySqlCommand comm = new MySqlCommand();
@@ -62,6 +89,7 @@ namespace QrCode
                                 DR.GetString(3));
 
                         }
+                        Conexao.fecharConexao();
                     }
                     else
                     {
@@ -95,6 +123,7 @@ namespace QrCode
             if (rbtCodigo.Checked || rbtNome.Checked || rbtNumero.Checked)
             {
                 txtPesquisa.Enabled = true;
+                cbxPesquisa.Focus();
             }
             if (rbtCodigo.Checked)
             {
@@ -112,11 +141,66 @@ namespace QrCode
 
         private void lstDados_DoubleClick(object sender, EventArgs e)
         {
-            string[] selectedItem = lstDados.SelectedItem.ToString().Split(" - ");
-            itemPesquisado = selectedItem[0];
-            frmGerenciarProdutos abrirProd = new frmGerenciarProdutos();
-            abrirProd.Show();
-            this.Hide();
+            if (lstDados.SelectedIndex >= 0)
+            {
+                string[] selectedItem;
+                string i;
+
+                if (cbxPesquisa.SelectedIndex < 0)
+                {
+                    i = "a";
+                }
+                else
+                {
+                    i = cbxPesquisa.SelectedItem.ToString();
+                }
+                switch (i)
+                {
+                    case "Funcionários":
+                        selectedItem = lstDados.SelectedItem.ToString().Split(" - ");
+                        itemPesquisado = selectedItem[0];
+                        frmGerenciarFuncionarios abrirFunc = new frmGerenciarFuncionarios();
+                        abrirFunc.Show();
+                        this.Hide();
+
+                        break;
+                    case "Produtos":
+
+                        selectedItem = lstDados.SelectedItem.ToString().Split(" - ");
+                        itemPesquisado = selectedItem[0];
+                        frmGerenciarProdutos abrirProd = new frmGerenciarProdutos();
+                        abrirProd.Show();
+                        this.Hide();
+                        break;
+                    case "Mesas":
+                        frmMesas abrirMesas = new frmMesas();
+                        abrirMesas.Show();
+                        this.Hide();
+                        break;
+                    default:
+
+                        break;
+
+                }
+            }
+        }
+       
+        private void cbxPesquisa_Enter(object sender, EventArgs e)
+        {
+            if (cbxPesquisa.SelectedIndex <0)
+            {
+                cbxPesquisa.DroppedDown = true;
+            }
+            else
+            {
+                cbxPesquisa.DroppedDown = false;
+            }
+            
+        }
+
+        private void cbxPesquisa_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtPesquisa.Focus();
         }
     }
 }

@@ -48,6 +48,7 @@ namespace QrCode
             this.btnAdicionarImg = new System.Windows.Forms.Button();
             this.pctTitulo = new System.Windows.Forms.PictureBox();
             this.txtValor = new System.Windows.Forms.TextBox();
+            this.lblMsg = new System.Windows.Forms.Label();
             this.painelDeBotoes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctImageProd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctTitulo)).BeginInit();
@@ -249,12 +250,21 @@ namespace QrCode
             this.txtValor.TabIndex = 3;
             this.txtValor.KeyUp += new System.Windows.Forms.KeyEventHandler(this.onValueInsert);
             // 
+            // lblMsg
+            // 
+            this.lblMsg.Location = new System.Drawing.Point(447, 297);
+            this.lblMsg.Name = "lblMsg";
+            this.lblMsg.Size = new System.Drawing.Size(100, 47);
+            this.lblMsg.TabIndex = 556;
+            this.lblMsg.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // frmGerenciarProdutos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.ControlBox = false;
+            this.Controls.Add(this.lblMsg);
             this.Controls.Add(this.txtValor);
             this.Controls.Add(this.pctTitulo);
             this.Controls.Add(this.btnVoltar);
@@ -306,5 +316,6 @@ namespace QrCode
         private System.Windows.Forms.Button btnAdicionarImg;
         private System.Windows.Forms.PictureBox pctTitulo;
         private System.Windows.Forms.TextBox txtValor;
+        private System.Windows.Forms.Label lblMsg;
     }
 }
