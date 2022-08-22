@@ -41,20 +41,18 @@ namespace QrCode
             this.Hide();
         }
 
-        private void btnVendas_Click(object sender, EventArgs e)
-        {
-            frmVendas abrir = new frmVendas();
-
-                abrir.Show();
-                this.Hide();
-
-        }
+        
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {
             frmLogin abrir = new frmLogin();
             abrir.Show();
             this.Hide();
+        }
+
+        private void frmMenu_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

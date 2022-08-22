@@ -20,7 +20,7 @@ namespace QrCode
         {
             if (prbCarregando.Value < 100)
             {
-                prbCarregando.Value = prbCarregando.Value + 5;
+                prbCarregando.Value = Convert.ToInt32(prbCarregando.Value + 5);
                 lblCarregando.Text = prbCarregando.Value.ToString() + "%";
             }
 

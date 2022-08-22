@@ -42,9 +42,7 @@ namespace QrCode
             switch (i)
             {
                 case "Funcionários":
-                    //frmGerenciarFuncionarios abrirFunc = new frmGerenciarFuncionarios();
-                    //abrirFunc.Show();
-                    //this.Hide();
+                    
                     if (campo.Equals("nome") || campo.Equals("id"))
                     {
                         MySqlCommand comm = new MySqlCommand();
@@ -98,9 +96,28 @@ namespace QrCode
                     }
                     break;
                 case "Mesas":
-                    //frmMesas abrirMesas = new frmMesas();
-                    //abrirMesas.Show();
-                    //this.Hide();
+                    if (campo.Equals("numero") || campo.Equals("id"))
+                    {
+                        MySqlCommand comm = new MySqlCommand();
+                        comm.CommandText = "select * from tbmesas where " + campo +
+                        " like '%" + txtPesquisa.Text + "%'; ";
+                        comm.CommandType = CommandType.Text;
+                        comm.Connection = Conexao.obterConexao();
+                        MySqlDataReader DR;
+                        DR = comm.ExecuteReader();
+                        lstDados.Items.Clear();
+                        while (DR.Read())
+                        {
+                            lstDados.Items.Add(DR.GetInt32(0) + " - Mesa: " + DR.GetString(1));
+
+                        }
+                        Conexao.fecharConexao();
+                    }
+                    else
+                    {
+                        rbtNome.Checked = false;
+                        rbtCodigo.Checked = true;
+                    }
                     break;
                 default:
                     MessageBox.Show("Selecione uma opção para onde pesquisar:");
@@ -173,7 +190,9 @@ namespace QrCode
                         this.Hide();
                         break;
                     case "Mesas":
+                        selectedItem = lstDados.SelectedItem.ToString().Split(" - ");
                         frmMesas abrirMesas = new frmMesas();
+                        itemPesquisado = selectedItem[0];
                         abrirMesas.Show();
                         this.Hide();
                         break;

@@ -89,9 +89,9 @@ namespace QrCode
                 }
                 Conexao.fecharConexao();
             }
-            catch (MySqlException)
+            catch (Exception erro)
             {
-
+                
             }
 
             frmPesquisar.itemPesquisado = null;

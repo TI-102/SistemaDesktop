@@ -35,7 +35,6 @@ namespace QrCode
             this.lblUsuario = new System.Windows.Forms.Label();
             this.lblCargo = new System.Windows.Forms.Label();
             this.lblConfirmar = new System.Windows.Forms.Label();
-            this.lblCadastro = new System.Windows.Forms.Label();
             this.cbbCargo = new System.Windows.Forms.ComboBox();
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.txtConfirmar = new System.Windows.Forms.TextBox();
@@ -60,56 +59,46 @@ namespace QrCode
             // lblSenha
             // 
             this.lblSenha.AutoSize = true;
-            this.lblSenha.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblSenha.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblSenha.ForeColor = System.Drawing.Color.Firebrick;
-            this.lblSenha.Location = new System.Drawing.Point(206, 221);
+            this.lblSenha.Location = new System.Drawing.Point(193, 221);
             this.lblSenha.Name = "lblSenha";
-            this.lblSenha.Size = new System.Drawing.Size(49, 20);
+            this.lblSenha.Size = new System.Drawing.Size(64, 25);
             this.lblSenha.TabIndex = 5;
             this.lblSenha.Text = "Senha";
             // 
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblUsuario.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblUsuario.ForeColor = System.Drawing.Color.Firebrick;
-            this.lblUsuario.Location = new System.Drawing.Point(198, 168);
+            this.lblUsuario.Location = new System.Drawing.Point(180, 168);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(59, 20);
+            this.lblUsuario.Size = new System.Drawing.Size(77, 25);
             this.lblUsuario.TabIndex = 4;
             this.lblUsuario.Text = "Usuário";
             // 
             // lblCargo
             // 
             this.lblCargo.AutoSize = true;
-            this.lblCargo.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblCargo.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblCargo.ForeColor = System.Drawing.Color.Firebrick;
-            this.lblCargo.Location = new System.Drawing.Point(206, 327);
+            this.lblCargo.Location = new System.Drawing.Point(194, 323);
             this.lblCargo.Name = "lblCargo";
-            this.lblCargo.Size = new System.Drawing.Size(49, 20);
+            this.lblCargo.Size = new System.Drawing.Size(63, 25);
             this.lblCargo.TabIndex = 9;
             this.lblCargo.Text = "Cargo";
             // 
             // lblConfirmar
             // 
             this.lblConfirmar.AutoSize = true;
-            this.lblConfirmar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblConfirmar.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblConfirmar.ForeColor = System.Drawing.Color.Firebrick;
-            this.lblConfirmar.Location = new System.Drawing.Point(153, 277);
+            this.lblConfirmar.Location = new System.Drawing.Point(108, 272);
             this.lblConfirmar.Name = "lblConfirmar";
-            this.lblConfirmar.Size = new System.Drawing.Size(114, 20);
+            this.lblConfirmar.Size = new System.Drawing.Size(149, 25);
             this.lblConfirmar.TabIndex = 8;
             this.lblConfirmar.Text = "Confirma Senha";
-            // 
-            // lblCadastro
-            // 
-            this.lblCadastro.AutoSize = true;
-            this.lblCadastro.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblCadastro.Location = new System.Drawing.Point(3, 9);
-            this.lblCadastro.Name = "lblCadastro";
-            this.lblCadastro.Size = new System.Drawing.Size(139, 40);
-            this.lblCadastro.TabIndex = 52;
-            this.lblCadastro.Text = "Cadastro";
             // 
             // cbbCargo
             // 
@@ -149,8 +138,8 @@ namespace QrCode
             // 
             // btnSair
             // 
-            this.btnSair.BackColor = System.Drawing.Color.Firebrick;
-            this.btnSair.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnSair.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(78)))), ((int)(((byte)(10)))));
+            this.btnSair.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnSair.ForeColor = System.Drawing.SystemColors.Control;
             this.btnSair.Location = new System.Drawing.Point(416, 377);
             this.btnSair.Name = "btnSair";
@@ -162,8 +151,8 @@ namespace QrCode
             // 
             // btnCadastrar
             // 
-            this.btnCadastrar.BackColor = System.Drawing.Color.Firebrick;
-            this.btnCadastrar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnCadastrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(78)))), ((int)(((byte)(10)))));
+            this.btnCadastrar.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnCadastrar.ForeColor = System.Drawing.SystemColors.Control;
             this.btnCadastrar.Location = new System.Drawing.Point(257, 377);
             this.btnCadastrar.Name = "btnCadastrar";
@@ -206,7 +195,6 @@ namespace QrCode
             this.Controls.Add(this.txtConfirmar);
             this.Controls.Add(this.txtSenha);
             this.Controls.Add(this.cbbCargo);
-            this.Controls.Add(this.lblCadastro);
             this.Controls.Add(this.lblCargo);
             this.Controls.Add(this.lblConfirmar);
             this.Controls.Add(this.txtUsuario);
@@ -230,7 +218,6 @@ namespace QrCode
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.Label lblCargo;
         private System.Windows.Forms.Label lblConfirmar;
-        private System.Windows.Forms.Label lblCadastro;
         private System.Windows.Forms.ComboBox cbbCargo;
         private System.Windows.Forms.TextBox txtSenha;
         private System.Windows.Forms.TextBox txtConfirmar;

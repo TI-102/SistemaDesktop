@@ -44,22 +44,22 @@ namespace QrCode
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblUsuario.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblUsuario.ForeColor = System.Drawing.Color.Firebrick;
             this.lblUsuario.Location = new System.Drawing.Point(179, 213);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(64, 21);
+            this.lblUsuario.Size = new System.Drawing.Size(77, 25);
             this.lblUsuario.TabIndex = 0;
             this.lblUsuario.Text = "Usuário";
             // 
             // lblSenha
             // 
             this.lblSenha.AutoSize = true;
-            this.lblSenha.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblSenha.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblSenha.ForeColor = System.Drawing.Color.Firebrick;
             this.lblSenha.Location = new System.Drawing.Point(190, 257);
             this.lblSenha.Name = "lblSenha";
-            this.lblSenha.Size = new System.Drawing.Size(53, 21);
+            this.lblSenha.Size = new System.Drawing.Size(64, 25);
             this.lblSenha.TabIndex = 1;
             this.lblSenha.Text = "Senha";
             // 
@@ -68,8 +68,10 @@ namespace QrCode
             this.txtUsuario.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtUsuario.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtUsuario.Location = new System.Drawing.Point(260, 211);
+            this.txtUsuario.Location = new System.Drawing.Point(260, 214);
+            this.txtUsuario.MaximumSize = new System.Drawing.Size(269, 25);
             this.txtUsuario.MaxLength = 50;
+            this.txtUsuario.MinimumSize = new System.Drawing.Size(269, 25);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(269, 29);
             this.txtUsuario.TabIndex = 0;
@@ -78,18 +80,18 @@ namespace QrCode
             // 
             this.txtSenha.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtSenha.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSenha.Font = new System.Drawing.Font("Wingdings", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtSenha.Font = new System.Drawing.Font("Wingdings", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtSenha.Location = new System.Drawing.Point(260, 259);
             this.txtSenha.MaxLength = 50;
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = 'l';
-            this.txtSenha.Size = new System.Drawing.Size(269, 24);
+            this.txtSenha.Size = new System.Drawing.Size(269, 25);
             this.txtSenha.TabIndex = 1;
             // 
             // btnEntrar
             // 
-            this.btnEntrar.BackColor = System.Drawing.Color.Firebrick;
-            this.btnEntrar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnEntrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(78)))), ((int)(((byte)(10)))));
+            this.btnEntrar.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnEntrar.ForeColor = System.Drawing.SystemColors.Control;
             this.btnEntrar.Location = new System.Drawing.Point(243, 306);
             this.btnEntrar.Name = "btnEntrar";
@@ -101,8 +103,8 @@ namespace QrCode
             // 
             // btnSair
             // 
-            this.btnSair.BackColor = System.Drawing.Color.Firebrick;
-            this.btnSair.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnSair.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(78)))), ((int)(((byte)(10)))));
+            this.btnSair.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnSair.ForeColor = System.Drawing.SystemColors.Control;
             this.btnSair.Location = new System.Drawing.Point(420, 306);
             this.btnSair.Name = "btnSair";
@@ -114,8 +116,8 @@ namespace QrCode
             // 
             // btnCadastrar
             // 
-            this.btnCadastrar.BackColor = System.Drawing.Color.Firebrick;
-            this.btnCadastrar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnCadastrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(78)))), ((int)(((byte)(10)))));
+            this.btnCadastrar.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnCadastrar.ForeColor = System.Drawing.SystemColors.Control;
             this.btnCadastrar.Location = new System.Drawing.Point(330, 362);
             this.btnCadastrar.Name = "btnCadastrar";
@@ -139,6 +141,7 @@ namespace QrCode
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(815, 450);
             this.ControlBox = false;
             this.Controls.Add(this.pictureBox1);
@@ -156,6 +159,7 @@ namespace QrCode
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmLogin_FormClosing);
+            this.Load += new System.EventHandler(this.frmLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

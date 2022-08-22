@@ -16,6 +16,7 @@ namespace QrCode
         public frmLogin()
         {
             InitializeComponent();
+            
         }
         private bool logged = false;
 
@@ -83,6 +84,11 @@ namespace QrCode
         private void frmLogin_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.ExitThread();
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

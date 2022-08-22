@@ -76,6 +76,7 @@ namespace QrCode
             
 
             limparTudo();
+            btnAdicionarImg.Enabled = true;
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)
@@ -105,7 +106,7 @@ namespace QrCode
                     txtValor.Text;
             
                     int res = comm.ExecuteNonQuery();
-
+                    Conexao.fecharConexao();
             }
             catch(Exception error)
             {
@@ -114,7 +115,7 @@ namespace QrCode
                 Conexao.fecharConexao();
             }
 
-    Conexao.fecharConexao();
+
             limparTudo();
             btnAlterar.Enabled = false;
             btnExcluir.Enabled = false;
@@ -143,9 +144,11 @@ namespace QrCode
                 comm.Parameters.Clear();
                 pctImageProd.Image = null;
                 btnAdicionarImg.Enabled = true;
-                    btnAdicionarImg.Focus();
-                    btnAlterar.Enabled = false;
-                    btnCadastrar.Enabled = true;
+                btnAdicionarImg.Focus();
+                btnExcluir.Enabled = false;
+                btnAlterar.Enabled = false;
+                btnCadastrar.Enabled = true;
+                txtCodigo.Text = null;
             }
             else if (vresp == DialogResult.No)
             {
@@ -176,6 +179,7 @@ namespace QrCode
 if (txtNome.Text != "" && txtDescricao.Text != "" && txtValor.Text != "")
             {
                 btnCadastrar.Enabled = true;
+                btnAdicionarImg.Enabled = true;
             }
             else
             {
@@ -263,9 +267,9 @@ if (txtNome.Text != "" && txtDescricao.Text != "" && txtValor.Text != "")
                 }
 
             }
-            catch (MySqlException)
+            catch (Exception erro)
             {
-
+                
             }
 
             frmPesquisar.itemPesquisado = null;
@@ -275,19 +279,19 @@ if (txtNome.Text != "" && txtDescricao.Text != "" && txtValor.Text != "")
 
         private void txtCodigo_TextChanged(object sender, EventArgs e)
         {
-            if(txtCodigo.Text != null)
+            if(txtCodigo.Text.Equals(null))
+            {
+                btnAlterar.Enabled = false;
+                btnExcluir.Enabled = false;
+                btnAdicionarImg.Enabled = true;
+                lblMsg.Text = "";
+            }
+            else
             {
                 btnAlterar.Enabled = true;
                 btnExcluir.Enabled = true;
                 btnAdicionarImg.Enabled = false;
                 lblMsg.Text = "Para Alterar imagem, clique em deletar.";
-            }
-            else
-            {
-                btnAlterar.Enabled = false;
-                btnExcluir.Enabled = false;
-                btnAdicionarImg.Enabled = true;
-                lblMsg.Text = null;
             }
         }
     }

@@ -41,6 +41,7 @@ namespace QrCode
             // 
             // prbCarregando
             // 
+            this.prbCarregando.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.prbCarregando.ForeColor = System.Drawing.Color.Lime;
             this.prbCarregando.Location = new System.Drawing.Point(165, 340);
             this.prbCarregando.Name = "prbCarregando";
@@ -50,8 +51,9 @@ namespace QrCode
             // lblCarregando
             // 
             this.lblCarregando.AutoSize = true;
+            this.lblCarregando.BackColor = System.Drawing.SystemColors.Control;
             this.lblCarregando.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblCarregando.Location = new System.Drawing.Point(367, 317);
+            this.lblCarregando.Location = new System.Drawing.Point(368, 401);
             this.lblCarregando.Name = "lblCarregando";
             this.lblCarregando.Size = new System.Drawing.Size(31, 20);
             this.lblCarregando.TabIndex = 1;
@@ -61,7 +63,7 @@ namespace QrCode
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(331, 410);
+            this.label1.Location = new System.Drawing.Point(335, 317);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(102, 20);
             this.label1.TabIndex = 2;
@@ -70,6 +72,7 @@ namespace QrCode
             // tmrCarregar
             // 
             this.tmrCarregar.Enabled = true;
+            this.tmrCarregar.Interval = 75;
             this.tmrCarregar.Tick += new System.EventHandler(this.tmrCarregar_Tick);
             // 
             // pictureBox1

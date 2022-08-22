@@ -30,7 +30,7 @@ namespace QrCode
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMesas));
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlCrud = new System.Windows.Forms.Panel();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
@@ -45,24 +45,26 @@ namespace QrCode
             this.btnVoltar = new System.Windows.Forms.Button();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.txtNumero = new System.Windows.Forms.TextBox();
-            this.panel1.SuspendLayout();
+            this.lblMsg = new System.Windows.Forms.Label();
+            this.pnlCrud.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctQrcode)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctTitulo)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // pnlCrud
             // 
-            this.panel1.Controls.Add(this.btnExcluir);
-            this.panel1.Controls.Add(this.btnCadastrar);
-            this.panel1.Controls.Add(this.btnAlterar);
-            this.panel1.Controls.Add(this.btnPesquisar);
-            this.panel1.Location = new System.Drawing.Point(31, 66);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(275, 372);
-            this.panel1.TabIndex = 3;
+            this.pnlCrud.Controls.Add(this.btnExcluir);
+            this.pnlCrud.Controls.Add(this.btnCadastrar);
+            this.pnlCrud.Controls.Add(this.btnAlterar);
+            this.pnlCrud.Controls.Add(this.btnPesquisar);
+            this.pnlCrud.Location = new System.Drawing.Point(31, 66);
+            this.pnlCrud.Name = "pnlCrud";
+            this.pnlCrud.Size = new System.Drawing.Size(275, 372);
+            this.pnlCrud.TabIndex = 3;
             // 
             // btnExcluir
             // 
+            this.btnExcluir.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnExcluir.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnExcluir.Image = ((System.Drawing.Image)(resources.GetObject("btnExcluir.Image")));
             this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -73,10 +75,12 @@ namespace QrCode
             this.btnExcluir.TabIndex = 3;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.UseVisualStyleBackColor = false;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnCadastrar
             // 
+            this.btnCadastrar.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnCadastrar.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnCadastrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCadastrar.Image")));
             this.btnCadastrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -86,10 +90,12 @@ namespace QrCode
             this.btnCadastrar.TabIndex = 0;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.UseVisualStyleBackColor = false;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // btnAlterar
             // 
+            this.btnAlterar.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnAlterar.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAlterar.Image = ((System.Drawing.Image)(resources.GetObject("btnAlterar.Image")));
             this.btnAlterar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -99,10 +105,12 @@ namespace QrCode
             this.btnAlterar.TabIndex = 2;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.UseVisualStyleBackColor = false;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // btnPesquisar
             // 
+            this.btnPesquisar.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnPesquisar.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnPesquisar.Image = ((System.Drawing.Image)(resources.GetObject("btnPesquisar.Image")));
             this.btnPesquisar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -112,46 +120,50 @@ namespace QrCode
             this.btnPesquisar.TabIndex = 1;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.UseVisualStyleBackColor = false;
             this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
             // pctQrcode
             // 
-            this.pctQrcode.Location = new System.Drawing.Point(364, 193);
+            this.pctQrcode.Location = new System.Drawing.Point(381, 190);
             this.pctQrcode.Name = "pctQrcode";
-            this.pctQrcode.Size = new System.Drawing.Size(309, 227);
+            this.pctQrcode.Size = new System.Drawing.Size(244, 244);
+            this.pctQrcode.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctQrcode.TabIndex = 1;
             this.pctQrcode.TabStop = false;
             // 
             // btnInserir
             // 
+            this.btnInserir.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnInserir.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnInserir.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnInserir.Location = new System.Drawing.Point(449, 147);
             this.btnInserir.Name = "btnInserir";
-            this.btnInserir.Size = new System.Drawing.Size(133, 25);
+            this.btnInserir.Size = new System.Drawing.Size(133, 27);
             this.btnInserir.TabIndex = 2;
             this.btnInserir.Text = "Inserir";
-            this.btnInserir.UseVisualStyleBackColor = true;
+            this.btnInserir.UseVisualStyleBackColor = false;
+            this.btnInserir.Click += new System.EventHandler(this.btnInserir_Click);
             // 
             // lblQrcode
             // 
             this.lblQrcode.AutoSize = true;
-            this.lblQrcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblQrcode.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblQrcode.Location = new System.Drawing.Point(381, 149);
             this.lblQrcode.Name = "lblQrcode";
-            this.lblQrcode.Size = new System.Drawing.Size(67, 18);
+            this.lblQrcode.Size = new System.Drawing.Size(68, 21);
             this.lblQrcode.TabIndex = 343;
             this.lblQrcode.Text = "QRCode";
             // 
             // lblNumero
             // 
             this.lblNumero.AutoSize = true;
-            this.lblNumero.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblNumero.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblNumero.Location = new System.Drawing.Point(381, 114);
             this.lblNumero.Name = "lblNumero";
-            this.lblNumero.Size = new System.Drawing.Size(62, 18);
+            this.lblNumero.Size = new System.Drawing.Size(68, 21);
             this.lblNumero.TabIndex = 423;
             this.lblNumero.Text = "Número";
-            this.lblNumero.Click += new System.EventHandler(this.label2_Click);
             // 
             // lblTitulo
             // 
@@ -176,17 +188,16 @@ namespace QrCode
             // lblCodigo
             // 
             this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblCodigo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblCodigo.Location = new System.Drawing.Point(381, 76);
             this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(56, 18);
+            this.lblCodigo.Size = new System.Drawing.Size(60, 21);
             this.lblCodigo.TabIndex = 711;
             this.lblCodigo.Text = "Código";
-            this.lblCodigo.Click += new System.EventHandler(this.label4_Click);
             // 
             // btnVoltar
             // 
-            this.btnVoltar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnVoltar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnVoltar.Image = ((System.Drawing.Image)(resources.GetObject("btnVoltar.Image")));
             this.btnVoltar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnVoltar.Location = new System.Drawing.Point(700, 12);
@@ -205,6 +216,7 @@ namespace QrCode
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(133, 23);
             this.txtCodigo.TabIndex = 0;
+            this.txtCodigo.TextChanged += new System.EventHandler(this.txtCodigo_TextChanged);
             // 
             // txtNumero
             // 
@@ -213,6 +225,14 @@ namespace QrCode
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(133, 23);
             this.txtNumero.TabIndex = 1;
+            this.txtNumero.TextChanged += new System.EventHandler(this.txtNumero_TextChanged);
+            // 
+            // lblMsg
+            // 
+            this.lblMsg.Location = new System.Drawing.Point(631, 239);
+            this.lblMsg.Name = "lblMsg";
+            this.lblMsg.Size = new System.Drawing.Size(114, 115);
+            this.lblMsg.TabIndex = 712;
             // 
             // frmMesas
             // 
@@ -220,6 +240,7 @@ namespace QrCode
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.ControlBox = false;
+            this.Controls.Add(this.lblMsg);
             this.Controls.Add(this.txtNumero);
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.btnVoltar);
@@ -230,7 +251,7 @@ namespace QrCode
             this.Controls.Add(this.lblQrcode);
             this.Controls.Add(this.btnInserir);
             this.Controls.Add(this.pctQrcode);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlCrud);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -238,7 +259,7 @@ namespace QrCode
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mesas";
             this.Load += new System.EventHandler(this.frmMesas_Load);
-            this.panel1.ResumeLayout(false);
+            this.pnlCrud.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pctQrcode)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctTitulo)).EndInit();
             this.ResumeLayout(false);
@@ -248,7 +269,7 @@ namespace QrCode
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlCrud;
         private System.Windows.Forms.PictureBox pctQrcode;
         private System.Windows.Forms.Button btnInserir;
         private System.Windows.Forms.Label lblQrcode;
@@ -263,5 +284,6 @@ namespace QrCode
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.TextBox txtNumero;
+        private System.Windows.Forms.Label lblMsg;
     }
 }
