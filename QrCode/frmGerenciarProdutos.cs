@@ -22,7 +22,7 @@ namespace QrCode
             btnExcluir.Enabled = false;
             
         }
-        private string idPesquisado;
+        private string idPesquisado = null;
         private static string _fname;
         private static byte[] photo;
 
@@ -81,18 +81,22 @@ namespace QrCode
 
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
+            idPesquisado = null;
             frmPesquisar abrir = new frmPesquisar();
             limparTudo();
             this.Hide();
             abrir.Show();
+
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
             try 
             {
-                
-                    MySqlCommand comm = new MySqlCommand();
+                btnAlterar.Enabled = false;
+                btnExcluir.Enabled = false;
+                idPesquisado = null;
+                MySqlCommand comm = new MySqlCommand();
                     comm.CommandText = "UPDATE tbprodutos SET descricao = @descricao,nome = @nome," +
                         " valor = @valor WHERE id = " + txtCodigo.Text;
                     comm.CommandType = CommandType.Text;
@@ -107,18 +111,21 @@ namespace QrCode
             
                     int res = comm.ExecuteNonQuery();
                     Conexao.fecharConexao();
+                idPesquisado = null;
+                limparTudo();
+                
             }
             catch(Exception error)
             {
                 MessageBox.Show("Ocorreu uma falha: " + error.Message);
                 
                 Conexao.fecharConexao();
+                limparTudo();
+                
             }
 
 
-            limparTudo();
-            btnAlterar.Enabled = false;
-            btnExcluir.Enabled = false;
+            
             
         }
 
@@ -126,18 +133,25 @@ namespace QrCode
         {
             try 
             {
-            MySqlCommand comm = new MySqlCommand();
+                btnAlterar.Enabled = false;
+                btnExcluir.Enabled = false;
+                idPesquisado = null;
+                lblMsg.Text = null;
+                MySqlCommand comm = new MySqlCommand();
             comm.CommandText = "DELETE FROM tbprodutos WHERE id=@codigo";
             comm.CommandType = CommandType.Text;
             comm.Connection = Conexao.obterConexao();
             comm.Parameters.Clear();
             comm.Parameters.Add("@codigo", MySqlDbType.Int32).Value =
             txtCodigo.Text;
+            btnAlterar.Enabled = false;
+            btnExcluir.Enabled = false;
             DialogResult vresp;
             vresp = MessageBox.Show("Deseja Realizar a Exclusão?", "Mensagem do " +
                 "Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question, 
             MessageBoxDefaultButton.Button2);
-            if (vresp == DialogResult.Yes)
+                
+                if (vresp == DialogResult.Yes)
             {
                 int res = comm.ExecuteNonQuery();
                 MessageBox.Show("Registro Excluido com Sucesso!!! ");
@@ -145,18 +159,15 @@ namespace QrCode
                 pctImageProd.Image = null;
                 btnAdicionarImg.Enabled = true;
                 btnAdicionarImg.Focus();
-                btnExcluir.Enabled = false;
-                btnAlterar.Enabled = false;
                 btnCadastrar.Enabled = true;
                 txtCodigo.Text = null;
-            }
+                
+                }
             else if (vresp == DialogResult.No)
             {
                 comm.Parameters.Clear();
                 Conexao.fecharConexao();
                 btnAdicionarImg.Enabled = true;
-                btnAlterar.Enabled = false;
-                btnExcluir.Enabled = false;
                 txtDescricao.Text = null;
                 txtNome.Text = null;
                 txtValor.Text = null;
@@ -173,7 +184,7 @@ namespace QrCode
             }
 
         }
-
+        
         private void onValueInsert(object sender, KeyEventArgs e)
         {
 if (txtNome.Text != "" && txtDescricao.Text != "" && txtValor.Text != "")
@@ -238,7 +249,6 @@ if (txtNome.Text != "" && txtDescricao.Text != "" && txtValor.Text != "")
             idPesquisado = frmPesquisar.itemPesquisado;
             txtCodigo.Text = idPesquisado;
 
-
             try
             {
                 MySqlCommand comm = new MySqlCommand();
@@ -247,7 +257,7 @@ if (txtNome.Text != "" && txtDescricao.Text != "" && txtValor.Text != "")
                 comm.Connection = Conexao.obterConexao();
                 MySqlDataReader DR;
                 DR = comm.ExecuteReader();
-                
+               
 
                 while (DR.Read())
                 {
@@ -279,12 +289,12 @@ if (txtNome.Text != "" && txtDescricao.Text != "" && txtValor.Text != "")
 
         private void txtCodigo_TextChanged(object sender, EventArgs e)
         {
-            if(txtCodigo.Text.Equals(null))
+            if (idPesquisado == null)
             {
                 btnAlterar.Enabled = false;
                 btnExcluir.Enabled = false;
                 btnAdicionarImg.Enabled = true;
-                lblMsg.Text = "";
+                lblMsg.Text = null;
             }
             else
             {

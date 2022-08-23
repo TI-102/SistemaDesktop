@@ -125,6 +125,9 @@ namespace QrCode
         {
             try
             {
+                idPesquisado = null;
+                btnAlterar.Enabled = false;
+                btnExcluir.Enabled = false;
                 MySqlCommand comm = new MySqlCommand();
                 comm.CommandText = "UPDATE tbmesas SET numero = @numero WHERE id = " + txtCodigo.Text;
                 comm.CommandType = CommandType.Text;
@@ -150,6 +153,9 @@ namespace QrCode
         {
             try
             {
+                idPesquisado = null;
+                btnAlterar.Enabled = false;
+                btnExcluir.Enabled = false;
                 MySqlCommand comm = new MySqlCommand();
                 comm.CommandText = "DELETE FROM tbmesas WHERE id=@codigo";
                 comm.CommandType = CommandType.Text;
@@ -169,7 +175,6 @@ namespace QrCode
                     pctQrcode.Image = null;
                     btnInserir.Enabled = true;
                     btnInserir.Focus();
-                    
                     btnCadastrar.Enabled = true;
                     txtCodigo.Text = null;
                 }
@@ -178,20 +183,16 @@ namespace QrCode
                     comm.Parameters.Clear();
                     Conexao.fecharConexao();
                     btnInserir.Enabled = true;
-                    
                     txtCodigo.Text = null;
                     txtNumero.Text = null;
                     pctQrcode.Image = null;
                 }
-                btnAlterar.Enabled = false;
-                btnExcluir.Enabled = false;
+                
             }
             catch (Exception error)
             {
                 MessageBox.Show("Ocorreu uma falha do tipo " + error.Message);
-
                 Conexao.fecharConexao();
-
             }
         }
 
@@ -237,8 +238,6 @@ namespace QrCode
                     ms.Seek(0, SeekOrigin.Begin);
 
                     pctQrcode.Image = Image.FromStream(ms);
-
-
                 }
 
             }
@@ -252,12 +251,12 @@ namespace QrCode
 
         private void txtCodigo_TextChanged(object sender, EventArgs e)
         {
-            if (txtCodigo.Text.Equals(null))
+            if (idPesquisado == null)
             {
                 btnAlterar.Enabled = false;
                 btnExcluir.Enabled = false;
                 btnInserir.Enabled = true;
-                lblMsg.Text = "";
+                lblMsg.Text = null;
             }
             else
             {
