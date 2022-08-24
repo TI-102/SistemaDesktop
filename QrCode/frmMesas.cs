@@ -198,9 +198,10 @@ namespace QrCode
 
         private void txtNumero_TextChanged(object sender, EventArgs e)
         {
-            if(txtNumero.Text != null)
+            if (txtNumero.Text != null || idPesquisado == null)
             {
                 btnCadastrar.Enabled = true;
+                btnInserir.Enabled = true;
             }
             else
             {
