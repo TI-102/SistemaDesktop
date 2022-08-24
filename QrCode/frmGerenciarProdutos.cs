@@ -187,7 +187,7 @@ namespace QrCode
         
         private void onValueInsert(object sender, KeyEventArgs e)
         {
-if (txtNome.Text != "" && txtDescricao.Text != "" && txtValor.Text != "")
+if (txtNome.Text != "" && txtDescricao.Text != "" && txtValor.Text != "" && idPesquisado == null)
             {
                 btnCadastrar.Enabled = true;
                 btnAdicionarImg.Enabled = true;
