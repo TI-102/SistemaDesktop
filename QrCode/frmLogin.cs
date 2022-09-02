@@ -29,15 +29,16 @@ namespace QrCode
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            if(txtUsuario.Text.Equals("Senac") && txtSenha.Text.Equals("Senac"))
+            bool status = false;
+            try
             {
-                logged = true;
+            status = acessoSistema();
             }
-            else
+            catch(Exception erro)
             {
-            bool status = acessoSistema();
+                MessageBox.Show("Ocorreu uma falha: " + erro.Message);
+            }
             logged = status;
-            }
             
             if (logged)
             {
@@ -60,9 +61,8 @@ namespace QrCode
         }
         bool acessoSistema()
         {
+            
             bool resultado = false;
-            try
-            {
                 Conexao.obterConexao();
                 MySqlCommand comm = new MySqlCommand();
                 comm.CommandText = "SELECT * FROM tbfuncionarios WHERE nome='" + txtUsuario.Text + "'AND senha = '" + txtSenha.Text + "'";
@@ -73,11 +73,9 @@ namespace QrCode
                 resultado = DR.HasRows;
                 Conexao.fecharConexao();
                 
-            }
-            catch (MySqlException)
-            {
-                MessageBox.Show("Ocorreu uma falha: ");
-            }
+
+               
+
             return resultado;
         }
 

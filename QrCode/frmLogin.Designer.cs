@@ -73,7 +73,7 @@ namespace QrCode
             this.txtUsuario.MaxLength = 50;
             this.txtUsuario.MinimumSize = new System.Drawing.Size(269, 25);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(269, 29);
+            this.txtUsuario.Size = new System.Drawing.Size(269, 25);
             this.txtUsuario.TabIndex = 0;
             // 
             // txtSenha
@@ -152,6 +152,7 @@ namespace QrCode
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.lblSenha);
             this.Controls.Add(this.lblUsuario);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
